@@ -1,0 +1,200 @@
+{
+  "Cosmos-Reason": {
+    "file": "Cosmos_Reason_realgen.json",
+    "n": 100,
+    "correct": 59,
+    "accuracy": 0.59,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 11,
+        "accuracy": 0.22,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 48,
+        "accuracy": 0.96,
+        "unparseable": 0
+      }
+    }
+  },
+  "InternVL3.5-30B": {
+    "file": "InternVL3_5-30B_realgen.json",
+    "n": 100,
+    "correct": 51,
+    "accuracy": 0.51,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 3,
+        "accuracy": 0.06,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 48,
+        "accuracy": 0.96,
+        "unparseable": 0
+      }
+    }
+  },
+  "InternVL3.5-8B": {
+    "file": "InternVL3_5-8B_realgen.json",
+    "n": 100,
+    "correct": 49,
+    "accuracy": 0.49,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 49,
+        "accuracy": 0.98,
+        "unparseable": 0
+      }
+    }
+  },
+  "Qwen3-VL+hints": {
+    "file": "Qwen3VL-hints_realgen.json",
+    "n": 100,
+    "correct": 46,
+    "accuracy": 0.46,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 6,
+        "accuracy": 0.12,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 40,
+        "accuracy": 0.8,
+        "unparseable": 0
+      }
+    }
+  },
+  "Qwen3-VL+agent+hints": {
+    "file": "Qwen3VL_agent_hints_realgen.json",
+    "n": 100,
+    "correct": 80,
+    "accuracy": 0.8,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 32,
+        "accuracy": 0.64,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 48,
+        "accuracy": 0.96,
+        "unparseable": 0
+      }
+    }
+  },
+  "Qwen3-VL+agent": {
+    "file": "Qwen3VL_agent_realgen.json",
+    "n": 100,
+    "correct": 79,
+    "accuracy": 0.79,
+    "unparseable": 1,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 35,
+        "accuracy": 0.7,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 44,
+        "accuracy": 0.88,
+        "unparseable": 1
+      }
+    }
+  },
+  "Qwen3-VL": {
+    "file": "Qwen3VL_realgen.json",
+    "n": 100,
+    "correct": 50,
+    "accuracy": 0.5,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 50,
+        "accuracy": 1.0,
+        "unparseable": 0
+      }
+    }
+  },
+  "Qwen2.5-Omni": {
+    "file": "Qwen_omni_realgen.json",
+    "n": 100,
+    "correct": 51,
+    "accuracy": 0.51,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 2,
+        "accuracy": 0.04,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 49,
+        "accuracy": 0.98,
+        "unparseable": 0
+      }
+    }
+  },
+  "LLaVA-OneVision": {
+    "file": "llava_onevision_realgen.json",
+    "n": 100,
+    "correct": 50,
+    "accuracy": 0.5,
+    "unparseable": 0,
+    "skipped_no_gt": 0,
+    "per_gt": {
+      "Generated": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "unparseable": 0
+      },
+      "Real": {
+        "n": 50,
+        "correct": 50,
+        "accuracy": 1.0,
+        "unparseable": 0
+      }
+    }
+  }
+}

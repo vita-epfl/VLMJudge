@@ -1,0 +1,55 @@
+# ─────────────────────────────────────────────────────────────
+#  Secrets — NEVER commit these
+# ─────────────────────────────────────────────────────────────
+.env
+**/.env
+secrets.env
+robot_secret.json
+*.key
+
+# ─────────────────────────────────────────────────────────────
+#  Python / Jupyter
+# ─────────────────────────────────────────────────────────────
+.venv/
+venv/
+**/__pycache__/
+*.py[cod]
+**/.ipynb_checkpoints/
+
+# ─────────────────────────────────────────────────────────────
+#  Large input data — lives on the cluster PVC, kept on disk locally
+# ─────────────────────────────────────────────────────────────
+dataset*/
+plots/
+
+# Cluster-specific infra (Docker image + RunAI launchers) — kept local, not in the public repo
+cluster/
+
+# ─────────────────────────────────────────────────────────────
+#  Closed-source eval — track the code/docs, ignore the heavy artifacts
+#  (multi-GB base64 request batches, raw results, frame caches, logs)
+# ─────────────────────────────────────────────────────────────
+src/evaluation/closed_source/**/batches/
+src/evaluation/closed_source/**/retry/
+src/evaluation/closed_source/**/results/
+src/evaluation/closed_source/**/.frame_cache/
+src/evaluation/closed_source/**/inspection/
+src/evaluation/closed_source/**/*.jsonl
+src/evaluation/closed_source/**/*.log
+src/evaluation/closed_source/**/*_enriched.*
+src/evaluation/closed_source/**/analysis/**/*.json
+src/evaluation/closed_source/**/analysis/**/*.parquet
+src/evaluation/closed_source/**/analysis/**/*.csv
+
+# ─────────────────────────────────────────────────────────────
+#  Bulky regenerable analysis artifacts (reproducible from results/ + scripts)
+# ─────────────────────────────────────────────────────────────
+report/*.parquet
+report/failures_by_model_category/
+**/*_enriched.parquet
+
+# ─────────────────────────────────────────────────────────────
+#  OS / editor noise
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+*.swp

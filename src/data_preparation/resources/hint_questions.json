@@ -1,0 +1,218 @@
+[
+    {
+        "Reality understanding": [
+            {
+                "question": "Is it a real video or generated ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Real",
+                    "Generated"
+                ],
+                "asked": "False",
+                "answer": "Generated",
+                "secondary_questions": [
+                    "Do the shadows cast by cars and objects match the direction of the light sources?",
+                    "Is the layout of the road normal ?",
+                    "Do road markings remain consistent in width and spacing?"
+                ]
+            },
+            {
+                "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+                "question_type": "MCQ",
+                "possible_answers": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "asked": "True",
+                "secondary_questions": [
+                    "Do the shadows cast by cars and objects match the direction of the light sources?",
+                    "Is the layout of the road normal ?",
+                    "Do road markings remain consistent in width and spacing?"
+                ]
+            }
+        ]
+    },
+    {
+        "Safety understanding": [
+            {
+                "question": "Is it a safe way of driving for the ego car ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "False",
+                "secondary_questions": [
+                    "Is the ego car maintaining a safe braking distance (2+ seconds)?",
+                    "Is the ego car staying centered in the lane without erratic swerving?",
+                    "Is the speed consistent with the flow of traffic?"
+                ]
+            },
+            {
+                "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+                "question_type": "MCQ",
+                "possible_answers": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "asked": "all_except_artifacts",
+                "secondary_questions": [
+                    "Is the ego car maintaining a safe braking distance (2+ seconds)?",
+                    "Is the ego car staying centered in the lane?",
+                    "Does the ego car brake or steer appropriately for obstacles?"
+                ]
+            }
+        ]
+    },
+    {
+        "Visual understanding": [
+            {
+                "question": "Is the ego car on a highway ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "aggressive_takeover",
+                "secondary_questions": [
+                    "Are there multiple lanes (2+) moving in the same direction?",
+                    "Is there a physical divider (barrier/median) separating opposing traffic?",
+                    "Are green overhead directional signs visible?"
+                ]
+            },
+            {
+                "question": "Are the traffic lights red ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "crossing_red_lights",
+                "secondary_questions": [
+                    "Is a traffic light housing clearly visible in the ego car's lane?",
+                    "Is the illuminated light significantly brighter than the inactive ones?",
+                    "Which position is lit: Top (Red), Middle (Yellow), or Bottom (Green)?"
+                ]
+            }
+        ]
+    },
+    {
+        "Traffic laws understanding": [
+            {
+                "question": "Is the ego car following the traffic rules ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "aggressive_takeover",
+                "secondary_questions": [
+                    "Did the ego car cross a solid white or double yellow line to pass?",
+                    "Did the ego car cut off the other vehicle when merging back?"
+                ]
+            },
+            {
+                "question": "Is the ego car following the traffic rules ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "crossing_red_lights",
+                "secondary_questions": [
+                    "Did the ego car's front bumper cross the stop line while the light was red?",
+                    "Did the car enter the intersection box while the light was red?"
+                ]
+            },
+            {
+                "question": "Is the ego car following the traffic rules ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "crossing_stop",
+                "secondary_questions": [
+                    "Did the ego car come to a complete halt (0 km/h) at the sign?",
+                    "Did the ego car yield to cross-traffic before proceeding?"
+                ]
+            },
+            {
+                "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "crossing_red_lights",
+                "secondary_questions": [
+                    "Did the car slow down as it approached the red light?",
+                    "Did the car wait for the light to turn green before accelerating?"
+                ]
+            }
+        ]
+    },
+    {
+        "Spatial-temporal understanding": [
+            {
+                "question": "On which side is the ego car overtaking ?",
+                "question_type": "MCQ",
+                "possible_answers": [
+                    "Left",
+                    "Right",
+                    "It's not overtaking"
+                ],
+                "asked": "aggressive_takeover",
+                "secondary_questions": [
+                    "Is the slower vehicle visible on the left or right side of the hood?",
+                    "Did the ego car move to the left or right lane to maneuver?"
+                ]
+            },
+            {
+                "question": "Has the ego car stopped ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "crossing_stop",
+                "secondary_questions": [
+                    "Has the motion of static background objects (trees/buildings) ceased?",
+                    "Is there a visual 'dip' in camera pitch indicating braking to a rest?"
+                ]
+            }
+        ]
+    },
+    {
+        "Artifacts understanding": [
+            {
+                "question": "Does any object appear or disappear without continuous motion ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "artifacts",
+                "secondary_questions": [
+                    "Do vehicles 'pop' into existence in the middle of the road?",
+                    "Do distant cars flicker in and out of visibility?"
+                ]
+            },
+            {
+                "question": "Do some objects change shape or appearance ?",
+                "question_type": "Closed",
+                "possible_answers": [
+                    "Yes",
+                    "No"
+                ],
+                "asked": "artifacts",
+                "secondary_questions": [
+                    "Do car models morph (e.g. sedan to SUV) as they get closer?",
+                    "Does text on signs or license plates scramble?"
+                ]
+            }
+        ]
+    }
+]

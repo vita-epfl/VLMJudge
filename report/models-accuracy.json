@@ -1,0 +1,50 @@
+{
+  "title": "Accuracy of the models",
+  "models": [
+    {
+      "name": "Qwen-Omni",
+      "accuracy": 10.4,
+      "highlight": false
+    },
+    {
+      "name": "Qwen3-VL",
+      "accuracy": 21.9,
+      "highlight": false
+    },
+    {
+      "name": "LLaVA-OneVision",
+      "accuracy": 23.1,
+      "highlight": false
+    },
+    {
+      "name": "InternVL3.5-8B",
+      "accuracy": 25.6,
+      "highlight": false
+    },
+    {
+      "name": "Cosmos-Reason",
+      "accuracy": 25.7,
+      "highlight": false
+    },
+    {
+      "name": "InternVL3.5-30B",
+      "accuracy": 30.8,
+      "highlight": false
+    },
+    {
+      "name": "GPT-5.4-mini",
+      "accuracy": 39.1,
+      "highlight": false
+    },
+    {
+      "name": "Agent v4p",
+      "accuracy": 50.9,
+      "highlight": false
+    },
+    {
+      "name": "Agent v4o",
+      "accuracy": 60.1,
+      "highlight": false
+    }
+  ]
+}

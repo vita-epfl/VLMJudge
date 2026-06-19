@@ -1,0 +1,62 @@
+{
+  "xLabel": "Inference time (s)",
+  "yLabel": "Accuracy (%)",
+  "points": [
+    {
+      "name": "Qwen-Omni",
+      "time": 5.76,
+      "accuracy": 10.4,
+      "category": "base",
+      "highlight": false
+    },
+    {
+      "name": "Qwen3-VL",
+      "time": 0.33,
+      "accuracy": 21.9,
+      "category": "base",
+      "highlight": false
+    },
+    {
+      "name": "LLaVA-OneVision",
+      "time": 0.55,
+      "accuracy": 23.1,
+      "category": "base",
+      "highlight": false
+    },
+    {
+      "name": "InternVL3.5-8B",
+      "time": 1.13,
+      "accuracy": 25.6,
+      "category": "base",
+      "highlight": false
+    },
+    {
+      "name": "Cosmos-Reason",
+      "time": 1.26,
+      "accuracy": 25.7,
+      "category": "base",
+      "highlight": false
+    },
+    {
+      "name": "InternVL3.5-30B",
+      "time": 1.46,
+      "accuracy": 30.8,
+      "category": "base",
+      "highlight": false
+    },
+    {
+      "name": "Agent v4p",
+      "time": 15.84,
+      "accuracy": 50.9,
+      "category": "agent",
+      "highlight": false
+    },
+    {
+      "name": "Agent v4o",
+      "time": 13.53,
+      "accuracy": 60.1,
+      "category": "agent",
+      "highlight": false
+    }
+  ]
+}

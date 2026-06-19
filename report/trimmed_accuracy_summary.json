@@ -1,0 +1,309 @@
+{
+  "eval_set_size": 7282,
+  "models": {
+    "Cosmos-Reason": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.26476242790442184,
+      "accuracy_full": 0.2653642653642654,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.1746905089408528
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.16992
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.323751178133836
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.4247787610619469
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.23007518796992482
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9407894736842105
+        }
+      ]
+    },
+    "InternVL3.5-30B": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.30692117550123593,
+      "accuracy_full": 0.3093203093203093,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.1361760660247593
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.31456
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.29688972667295005
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.5486725663716814
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.07218045112781955
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9506578947368421
+        }
+      ]
+    },
+    "InternVL3.5-8B": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.2535017852238396,
+      "accuracy_full": 0.2561389228055895,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.20082530949105915
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.15424
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.3477851083883129
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.5663716814159292
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.019548872180451128
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9046052631578947
+        }
+      ]
+    },
+    "LLaVA-OneVision": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.23564954682779457,
+      "accuracy_full": 0.2385022385022385,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.2517193947730399
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.20128
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.325636192271442
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.12979351032448377
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.015037593984962405
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.5230263157894737
+        }
+      ]
+    },
+    "Qwen2.5-Omni": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.2721779730843175,
+      "accuracy_full": 0.2743182743182743,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.13067400275103164
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.14976
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.4213006597549482
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.5663716814159292
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.07067669172932331
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9407894736842105
+        }
+      ]
+    },
+    "Qwen3-VL": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.21834660807470474,
+      "accuracy_full": 0.2192375525708859,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.15268225584594222
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.03424
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.39491046182846373
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.5722713864306784
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.09774436090225563
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9046052631578947
+        }
+      ]
+    },
+    "Qwen3-VL+agent": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.5992859104641582,
+      "accuracy_full": 0.6007326007326007,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.5845942228335625
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.57312
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.5805843543826579
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.6194690265486725
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.649624060150376
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9013157894736842
+        }
+      ]
+    },
+    "Qwen3-VL+agent+hints": {
+      "n_kept": 7282,
+      "n_dropped": 89,
+      "accuracy_trimmed": 0.5083768195550673,
+      "accuracy_full": 0.5092931759598426,
+      "per_category_trimmed": [
+        {
+          "category": "Artifacts understanding",
+          "n": 727,
+          "accuracy": 0.4676753782668501
+        },
+        {
+          "category": "Reality understanding",
+          "n": 3125,
+          "accuracy": 0.42848
+        },
+        {
+          "category": "Safety understanding",
+          "n": 2122,
+          "accuracy": 0.49622997172478794
+        },
+        {
+          "category": "Spatial-temporal understanding",
+          "n": 339,
+          "accuracy": 0.6076696165191741
+        },
+        {
+          "category": "Traffic laws understanding",
+          "n": 665,
+          "accuracy": 0.7308270676691729
+        },
+        {
+          "category": "Visual understanding",
+          "n": 304,
+          "accuracy": 0.9144736842105263
+        }
+      ]
+    }
+  }
+}

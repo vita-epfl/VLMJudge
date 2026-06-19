@@ -1,0 +1,106 @@
+# Real / Generated ablation — commands to run on the RCP pod after the
+# standard `cp -r /mnt/vita/scratch/.../VLM-eval/code ./` step. Assumes the
+# `real_vs_generated/` folder ships with the code upload (it sits next to
+# `evaluation/`, `agentic/`, etc.).
+#
+# 100 videos total: 25 generated (cosmos-drive-dreams) + 25 generated
+# (cosmos-predict1) + 50 real (<final_dataset>/real). Seed 42, reproducible.
+# Two prompt variants: no hints and with hints (3 reality hints).
+#
+# All inference scripts in real_vs_generated/scripts/ are surgical copies of
+# the canonical ones; the only modification is a single `os.path.isabs(...)`
+# fallback so we can pass an absolute --questions_file. Output JSONs share
+# the same shape as the original benchmark
+# ({"video":..., "question":..., "answer":...}) for direct comparison.
+
+ABL=/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/code/real_vs_generated
+Q_NOHINT=$ABL/questions_realgen.json
+Q_HINT=$ABL/questions_realgen_hints.json
+OUT=$ABL/results
+
+
+# ---------------------------------------------------------------------------
+# 0. Build the sampled dataset (must run first; writes 3 JSONs)
+# ---------------------------------------------------------------------------
+python code/real_vs_generated/build_realgen_dataset.py \
+    --storage_path /mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset \
+    --questions_dd code/dataset/dataset_final/questions_cosmos-drive-dreams.json \
+    --questions_p1 code/dataset/dataset_final/questions_cosmos-predict1.json \
+    --out_dir code/real_vs_generated
+
+
+# ---------------------------------------------------------------------------
+# 1. Qwen3-VL (no hints + with hints)
+# ---------------------------------------------------------------------------
+python code/real_vs_generated/scripts/eval_qwen_3_VL.py \
+    --batch_size 100 --max_new_tokens 2048 --tensor_parallel_size 4 --num_frames 15 \
+    --questions_file $Q_NOHINT \
+    --output_file_path $OUT/Qwen3VL_realgen.json
+
+python code/real_vs_generated/scripts/eval_qwen_3_VL.py \
+    --batch_size 100 --max_new_tokens 2048 --tensor_parallel_size 4 --num_frames 15 \
+    --questions_file $Q_HINT \
+    --output_file_path $OUT/Qwen3VL_hints_realgen.json
+
+
+# ---------------------------------------------------------------------------
+# 2. Qwen2.5-Omni
+# ---------------------------------------------------------------------------
+python code/real_vs_generated/scripts/eval_qwen_omni.py \
+    --batch_size 50 --max_new_tokens 2048 \
+    --questions_file $Q_NOHINT \
+    --output_file_path $OUT/Qwen_omni_realgen.json
+
+
+# ---------------------------------------------------------------------------
+# 3. Cosmos-Reason
+# ---------------------------------------------------------------------------
+python code/real_vs_generated/scripts/eval_cosmos_reason.py \
+    --batch_size 10 --max_tokens 4096 --tensor_parallel_size 2 \
+    --questions_file $Q_NOHINT \
+    --output_file_path $OUT/Cosmos_Reason_realgen.json
+
+
+# ---------------------------------------------------------------------------
+# 4. LLaVA-OneVision (canonical script already takes absolute --dataset_json)
+# ---------------------------------------------------------------------------
+python code/eval_LLaVa.py \
+    --batch_size 5 --max_new_tokens 1024 --tensor_parallel_size 4 \
+    --dataset_json $Q_NOHINT \
+    --output_file $OUT/llava_onevision_realgen.json
+
+
+# ---------------------------------------------------------------------------
+# 5. InternVL3.5 30B + 8B
+# ---------------------------------------------------------------------------
+pip install decord && pip install lmdeploy>=0.9.1 && pip install timm
+
+python code/real_vs_generated/scripts/eval_InternVL3_5.py \
+    --batch_size 100 --max_new_tokens 1024 --num_segments 15 --tp 8 \
+    --pytorch_backend True \
+    --questions_file $Q_NOHINT \
+    --output_file_path $OUT/InternVL3_5-30B_realgen.json
+
+# 8B uses the InternVL3_5-8B model path; the canonical benchmark swaps the
+# model directory inside eval_InternVL3_5.py (line 162). For the ablation,
+# point --output_file_path to the 8B file and either re-use the same
+# (already patched) script after editing the model path, or run the
+# `real_vs_generated/scripts/eval_InternVL3_5.py` invocation with the same
+# argument pattern as the canonical 8B run in commands_to_run.txt.
+
+
+# ---------------------------------------------------------------------------
+# 6. Qwen3-VL + agent (no hints) and + agent + hints
+#    vLLM must be running on :8000 (same `vllm serve …` command as the
+#    canonical agentic flow in commands_to_run.txt).
+# ---------------------------------------------------------------------------
+# from the pod's working directory (where `code/` lives):
+python code/real_vs_generated/scripts/main_multi_tools_multithreaded.py \
+    --num_workers 15 \
+    --questions_file $Q_NOHINT \
+    --output_file_path $OUT/v4o_realgen.json
+
+python code/real_vs_generated/scripts/main_multi_tools_multithreaded.py \
+    --num_workers 15 \
+    --questions_file $Q_HINT \
+    --output_file_path $OUT/v4p_realgen.json

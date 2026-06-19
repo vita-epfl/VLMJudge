@@ -1,0 +1,749 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{siunitx}
+\sisetup{group-separator={\,},output-decimal-marker={.}}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+
+\title{GPT-5.4-mini on the VLM-eval-rcp driving-video benchmark:\\
+accuracy breakdown and per-category failure analysis}
+\author{Matthieu Scharffe}
+\date{April 2026}
+
+\newcommand{\pct}[1]{#1\,\%}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We adapt the repository's agentic post-processing pipeline to the
+\code{gpt\_all\_results.json} file produced by the OpenAI Batch API
+evaluation of GPT-5.4-mini on the in-house driving-video benchmark
+(cosmos-drive-dreams + cosmos-predict1, five frames at~1\,fps per clip,
+inline base64 images). The closed-source evaluation reuses the
+structured-output shape \(\{\texttt{evaluation},\texttt{answer}\}\), so the
+agentic cleaner applies unchanged apart from the removal of the
+\emph{``The answer is one of the following\dots''} suffix from multiple-choice
+questions. After joining against the 17 ground-truth questions in
+\code{questions\_cosmos-drive-dreams.json} and
+\code{questions\_cosmos-predict1.json}, \num{7282} answers are evaluated
+(100\,\% ground-truth coverage). Overall accuracy is
+\textbf{\pct{39.12}}, with strong heterogeneity across the six question
+categories: from \pct{95.72} on \emph{Visual understanding} to
+\pct{20.75} on \emph{Traffic laws understanding} and \pct{11.08} on
+the \emph{Real-vs-Generated} question alone. A per-category audit
+(one LLM-based reviewer per category, reading the raw model reasonings
+on the failing subset) isolates 30+ recurring failure modes, most of
+which trace back to the 5-frame/1-fps temporal budget being
+incompatible with the benchmark's violation- and artifact-centric
+design, combined with systematic answer-label biases (``Real'',
+``Yes'' on safety, ``2'' on the realism Likert, ``Left'' on overtake).
+\end{abstract}
+
+\section{Evaluation setup}
+\label{sec:setup}
+
+\paragraph{Inputs.} GPT-5.4-mini was evaluated through the OpenAI
+Batch API using the \code{final\_answer} Pydantic schema
+(\code{evaluation} free-text + \code{answer} enum), five frames per
+clip sampled at 1\,fps and sent as inline base64 JPEGs at
+\code{detail=low}. Videos come from two sources:
+\begin{itemize}
+  \item \code{cosmos-drive-dreams/} (\num{5568} answered questions): photoreal
+  driving clips synthesised by the Cosmos Drive Dreams world model,
+  split into \code{negative/} (nominal driving) and three violation
+  subsets \code{aggressive\_takeover/}, \code{crossing\_red\_lights/},
+  \code{crossing\_stop/}.
+  \item \code{cosmos-predict1/} (\num{1714} answered questions): clips
+  containing visible generation artifacts, used to probe artifact
+  sensitivity.
+\end{itemize}
+
+\paragraph{Post-processing pipeline.} The merged result file
+\code{gpt\_all\_results.json} already has the same per-record shape as
+the agentic runs (\code{\{video, question, evaluation, answer, history,
+usage, model, custom\_id\}}), so only two adjustments are needed
+with respect to \code{analysis/answer\_analysis\_agent.py}:
+\begin{enumerate}
+  \item The question text is stripped of the multiple-choice suffix
+  ``\emph{The answer is one of the following:\dots}'' (regex, case-insensitive),
+  because the ground-truth question text does not include it.
+  \item The cluster video prefix
+  \code{/mnt/vita/scratch/\dots/final\_dataset/} is removed before
+  joining.
+\end{enumerate}
+Joining on \((\text{relative video path},\text{question})\) against the two
+\code{questions\_*.json} files yields \num{7282}/\num{7282} matched
+records (no missing ground truth) and enriches each row with its
+\code{category} and \code{question\_type}. The wrapper lives at
+\code{closed\_source\_evaluation/gpt/analysis/run\_analysis.py}; it
+emits the parquet/CSV of enriched answers, a per-category JSON of
+failures, and the summary file
+\code{gpt\_accuracy\_summary.json}.
+
+\section{Global accuracy}
+
+Overall accuracy is \pct{39.12} (\num{2849}/\num{7282}). Table~\ref{tab:source}
+shows the per-source split. GPT-5.4-mini is roughly 10\,pp more accurate
+on the \code{cosmos-drive-dreams} subset than on \code{cosmos-predict1},
+but as Section~\ref{sec:cat} shows this is driven entirely by the
+\emph{Artifacts understanding} / \emph{Reality understanding} asymmetry
+between the two sources.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Source & $n$ & $n_\mathrm{correct}$ & Accuracy \\
+\midrule
+cosmos-drive-dreams & \num{5568} & \num{2316} & \pct{41.59} \\
+cosmos-predict1     & \num{1714} & \num{533}  & \pct{31.10} \\
+\midrule
+\textbf{Overall}    & \num{7282} & \num{2849} & \pct{39.12} \\
+\bottomrule
+\end{tabular}
+\caption{GPT-5.4-mini accuracy by video source.}
+\label{tab:source}
+\end{table}
+
+\subsection{Per-category accuracy}
+\label{sec:cat}
+
+Table~\ref{tab:cat} breaks the score down by the six question
+categories encoded in the ground truth. Two extreme regimes coexist:
+\emph{Visual understanding} (highway / traffic-light presence / lighting
+change) is nearly solved, while \emph{Reality understanding} and
+\emph{Traffic laws understanding} are well below chance baseline for
+the underlying binary/ternary questions.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Category & $n$ & $n_\mathrm{correct}$ & Accuracy \\
+\midrule
+Visual understanding             & 304  & 291  & \pct{95.72} \\
+Spatial-temporal understanding   & 339  & 234  & \pct{69.03} \\
+Artifacts understanding          & 727  & 370  & \pct{50.89} \\
+Safety understanding             & 2122 & 770  & \pct{36.29} \\
+Reality understanding            & 3125 & 1046 & \pct{33.47} \\
+Traffic laws understanding       & 665  & 138  & \pct{20.75} \\
+\midrule
+\textbf{Overall}                 & 7282 & 2849 & \pct{39.12} \\
+\bottomrule
+\end{tabular}
+\caption{GPT-5.4-mini accuracy by question category (sorted by
+accuracy).}
+\label{tab:cat}
+\end{table}
+
+\subsection{Per-question accuracy}
+
+Table~\ref{tab:perq} aggregates the 17 distinct questions (after
+suffix-stripping). Three questions account for most of the loss:
+\emph{Is it a real video or generated?} (\num{1397} failures),
+\emph{Overall, how safe\dots score 1--3} (\num{954}), and
+\emph{Is the ego car following the traffic rules?} (\num{421}).
+
+{\small
+\begin{longtable}{p{9.1cm}rrr}
+\toprule
+Question & $n$ & $n_\mathrm{correct}$ & Acc. \\
+\midrule
+Is the ego car on a highway?                                     & 159  & 153 & \pct{96.23} \\
+Are the traffic lights red?                                      & 144  & 137 & \pct{95.14} \\
+Has the ego car stopped?                                         & 201  & 185 & \pct{92.04} \\
+Do some objects change shape or appearance?                      & 402  & 260 & \pct{64.68} \\
+Is it a safe way of driving for the ego car?                     & 1061 & 663 & \pct{62.49} \\
+Overall, how realistic is the scene\,\dots\,(1--3)               & 1553 & 872 & \pct{56.15} \\
+On which side is the ego car overtaking?                         & 133  & 47  & \pct{35.34} \\
+Does any object appear or disappear without continuous motion?   & 325  & 110 & \pct{33.85} \\
+Is the ego car behavior consistent with visible cues of the traffic lights? & 153 & 47 & \pct{30.72} \\
+Is the ego car following the traffic rules?                      & 512  & 91  & \pct{17.77} \\
+Is it a real video or generated?                                 & 1571 & 174 & \pct{11.08} \\
+Overall, how safe is the driving\,\dots\,(1--3)                  & 1061 & 107 & \pct{10.08} \\
+\midrule
+\multicolumn{4}{l}{\emph{Low-support questions (n~$\leq$~3):}} \\
+Has the ego car stopped after the stop sign?                     & 1 & 1 & \pct{100.00} \\
+Is the lighting changing?                                        & 1 & 1 & \pct{100.00} \\
+Has the ego car stopped after the sign?                          & 3 & 1 & \pct{33.33} \\
+Has the ego car stopped after the stop?                          & 1 & 0 & \pct{0.00} \\
+Are the traffic signs consistent with ego movement?\,\dots       & 1 & 0 & \pct{0.00} \\
+\bottomrule
+\caption{GPT-5.4-mini accuracy by question. Questions with at most 3
+items are kept for completeness but should not be read as
+statistically meaningful.}
+\label{tab:perq}
+\end{longtable}
+}
+
+\subsection{Answer-label distribution}
+
+The confusion over \((\texttt{ground\_truth},\texttt{vlm\_answer})\) pairs
+(Table~\ref{tab:confmat}) is a useful summary of where GPT-5.4-mini's
+output distribution concentrates. Two patterns stand out:
+\begin{itemize}
+  \item On \emph{Real/Generated} (GT always \emph{Generated}) the
+  model answers \emph{Real} in \num{1397}/\num{1571} cases
+  (\pct{88.92}).
+  \item On the realism Likert (GT is 1 or 2), the model emits
+  \emph{2} in \num{1894}/\num{1553} prompts that involved this scale
+  pooled with the safety scale -- and, crucially, \emph{never emits~1}
+  on the safety Likert (see Section~\ref{sec:safety}).
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llr}
+\toprule
+Ground truth & VLM answer & Count \\
+\midrule
+Generated & Real                & \num{1397} \\
+Yes       & Yes                 & \num{1110} \\
+1         & 2                   & \num{1060} \\
+No        & Yes                 & 915 \\
+2         & 2                   & 900 \\
+No        & No                  & 539 \\
+3         & 2                   & 466 \\
+Yes       & No                  & 400 \\
+Generated & Generated           & 174 \\
+3         & 3                   &  79 \\
+Right     & Left                &  77 \\
+2         & 3                   &  75 \\
+Right     & Right               &  43 \\
+1         & 3                   &  34 \\
+Right     & It's not overtaking &   7 \\
+Left      & Left                &   4 \\
+Left      & Right               &   2 \\
+\bottomrule
+\end{tabular}
+\caption{Global confusion table (ground truth label $\times$ predicted
+label) across all 7282 joined answers.}
+\label{tab:confmat}
+\end{table}
+
+\section{Per-category failure analysis}
+
+For each of the six categories we ran an independent LLM reviewer over
+the failing subset (the per-category JSON dumps in
+\code{closed\_source\_evaluation/gpt/analysis/failures\_by\_category/}).
+Each reviewer was given the failure records, the full enriched parquet
+for confusion-matrix computations, and the accuracy summary. Reviewers
+were asked to (i)~compute per-question confusion matrices,
+(ii)~identify recurring failure modes from the \code{raw\_output}
+reasoning texts, (iii)~pick 2--3 representative short quotes per mode,
+and (iv)~conclude with implications. The sections below summarise
+their findings; percentages are the reviewers' own counts recomputed
+on the failure set.
+
+% ---------------------------------------------------------------
+\subsection{Reality understanding (acc.~\pct{33.47}; \num{2079} failures)}
+\label{sec:reality}
+
+\paragraph{Structure.} Two questions compose this category: the
+Real/Generated binary (\num{1571} items) and the realism Likert
+1--3 (\num{1553} items). The binary is catastrophic
+(\pct{11.08} acc.) and the Likert is barely passable (\pct{56.15}).
+
+\paragraph{Confusion.} The ground truth for the binary is always
+\emph{Generated} in this benchmark, so \emph{all} \num{1397} binary
+failures are false negatives (\emph{Real} called on a synthetic clip).
+On the Likert, failures decompose almost entirely as one-step
+over-ratings: \num{590} GT=1~$\to$~pred=2, 91 GT=1 or 2~$\to$~pred=3
+(even though 3 is never a valid answer in this benchmark), no
+under-ratings. Failures are concentrated on \code{cosmos-drive-dreams}
+(60\,\% of category failures) because that source supplies the most
+photoreal clips; \code{cosmos-predict1} fails more by \emph{rate}
+(\pct{83.6} wrong on the binary within this source) but less by
+absolute count because it is a smaller split.
+
+\paragraph{Recurring failure modes.}
+\begin{description}[style=nextline]
+  \item[Temporal-coherence trap.] Dominant pattern ($\sim$70\,\% of
+  binary failures). GPT treats stable perspective, consistent lane
+  geometry and smooth motion across 5 frames as proof of authenticity,
+  which is exactly what diffusion-based world models are designed to
+  achieve. \emph{``plausible lane geometry, consistent lighting, and
+  natural vehicle motion across successive frames''}
+  (\code{agg\_tk\_019\_Sunny.mp4}); \emph{``consistent forward motion,
+  stable perspective, and coherent road geometry \ldots{} no obvious
+  warping, duplication, or temporal glitches''}
+  (\code{uvRaCzWpFrQ\_76128\_14b.mp4}).
+  \item[Absence-of-artifact fallacy.] The model enumerates what is
+  \emph{not} present (no warping, no duplication, no flicker) and
+  concludes \emph{Real}. Example: \emph{``no obvious spatial distortions,
+  duplicated objects, or temporal inconsistencies typical of generated
+  video''} (\code{cross\_red\_022\_Original.mp4}).
+  \item[Dashcam-aesthetic laundering.] Lens flare, motion blur, rain
+  streaks, low-light noise and compression blur are reinterpreted as
+  authentic-capture artefacts rather than generative artefacts.
+  Example: \emph{``consistent rain streaks and water droplets on the
+  windshield, realistic motion blur \ldots{} no obvious AI
+  artifacts''} (\code{agg\_tk\_001\_Rainy.mp4}).
+  \item[Weather/night cover.] The \code{*\_Foggy}, \code{*\_Rainy},
+  \code{*\_Snowy}, \code{*\_Night} variants dominate binary failures:
+  reduced visibility lets the model excuse the blur that would
+  otherwise be suspicious.
+  \item[Realism-score optimism.] Isolated imperfections are labelled
+  ``minor'' and the Likert is bumped up by one bin
+  (GT=1~$\to$~pred=2, occasionally~3). Example: \emph{``broadly
+  coherent and realistic \ldots{} only minor softness and slight
+  visual blur typical of dashcam footage''}
+  (\code{cross\_red\_037\_Foggy.mp4}, GT=1~$\to$~pred=3).
+  \item[Cross-question inconsistency.] On \code{cosmos-predict1} the
+  model often scores the Likert down to~2 while citing explicit
+  synthetic cues, then answers \emph{Real} on the paired binary.
+  Example: \code{bqiM7F6TDfo\_17184\_7b.mp4} -- Likert~2 cites
+  \emph{``overhead display text is garbled/unreadable''}, binary
+  answer is \emph{Real} with \emph{``no obvious AI artifacts''}.
+  \item[Plausibility-over-provenance.] GPT equates ``physically
+  plausible'' with ``actually filmed'', conflating the two different
+  questions the category is probing.
+\end{description}
+
+\paragraph{Implications.}
+\begin{itemize}
+  \item At 5 frames, GPT-5.4-mini has \emph{no usable} generative-artefact
+  detector: \pct{88.92} of Real/Generated calls are wrong, and 100\,\% of
+  errors are in the same direction, consistent with a strong
+  \emph{Real} prior rather than content-driven discrimination.
+  \item The model's mental checklist targets GAN-era tells (warping,
+  flicker, duplication); modern diffusion video generators do not
+  produce those, so the detector is structurally mismatched to the
+  benchmark.
+  \item There is a within-sample inconsistency -- an artefact-aware
+  Likert answer is followed by a \emph{Real} binary on the same
+  frames. A pragmatic remediation is to derive the binary answer from
+  the Likert (e.g.~\(\text{score}\leq 2 \Rightarrow \text{Generated}\))
+  rather than trust the free-text judgement.
+\end{itemize}
+
+% ---------------------------------------------------------------
+\subsection{Safety understanding (acc.~\pct{36.29}; \num{1352} failures)}
+\label{sec:safety}
+
+\paragraph{Structure.} Two questions, both scored on the 1082 items
+of the \code{cosmos-drive-dreams} split that carry safety ground
+truth: the Yes/No binary (\emph{Is it a safe way of driving for the
+ego car?}) and the 1--3 Likert. \pct{62.5} accuracy on the binary is
+misleading -- the reviewer's confusion matrix shows the model is a
+near-constant \emph{Yes} classifier:
+
+\medskip
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+ & VLM=Yes & VLM=No \\
+\midrule
+GT=Yes & 520 & 56  \\
+GT=No  & 342 & 143 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+\noindent On the Likert, the reviewer finds that GPT-5.4-mini
+\textbf{never emits the label ``1''} across all 1061 items. Its
+answer distribution collapses to \(\{2: 964,\ 3: 97\}\). Every GT=1
+clip is therefore automatically wrong.
+
+\paragraph{Bias direction.} On the binary, \pct{86} of failures are
+optimistic (GT=No~$\to$~pred=Yes). On the Likert, the optimism is
+structural: 470 GT=1~$\to$~pred=2, plus 15 GT=1~$\to$~pred=3.
+Aggregating both questions, \pct{61.4} of Safety failures are
+optimistic, \pct{38.6} pessimistic, with the pessimistic mass
+concentrated in GT=3~$\to$~pred=2 one-step under-rates of perfectly
+safe clips.
+
+\paragraph{Recurring failure modes.}
+\begin{description}[style=nextline]
+  \item[``No abrupt maneuver observed~$\to$~safe''.] The model only
+  checks the ego actuation (swerving, hard braking, tailgating) and
+  defaults to safe when no dramatic event is in the 5 frames, ignoring
+  contextual violations (running a red, missing a stop, illegal
+  overtake).
+  \item[Aggressive overtake read as ``steady highway driving''.]
+  Example on \code{agg\_tk\_003\_Sunny.mp4} (GT=1, pred=2):
+  \emph{``driving normally in its lane on a highway with steady
+  traffic, no abrupt maneuvers \ldots{} mostly safe with only minor
+  situational issues like glare''}.
+  \item[Red-light / stop-sign violations recast as ``approaching
+  cautiously''.] \code{cross\_red\_040\_Night.mp4} (GT=1, pred=2):
+  \emph{``driving steadily in its lane through a signalized urban
+  road at night, with no abrupt swerving, hard braking, or obvious
+  unsafe maneuvers visible''}.
+  \item[Weather-as-only-risk fallacy.] For GT=3 clips, the model
+  downgrades to~2 citing fog/rain/sun glare/snow/motion blur as
+  ``minor issues''; this pattern alone produces 466 of the 545 GT=3
+  failures.
+  \item[Mode-collapse on the midpoint ``2''.] The string
+  \emph{``mostly safe with minor issues''} appears in the majority
+  of sampled reasonings and swallows both tails of the scale.
+  \item[Asymmetric evidence threshold.] The model requires visible
+  collision-level evidence to say \emph{No}; absence of a visible
+  collision is treated as positive evidence of safety (classic
+  absence-of-evidence error).
+\end{description}
+
+\paragraph{Implications.}
+\begin{itemize}
+  \item The headline \pct{36} Safety accuracy hides \pct{0.0}
+  per-class accuracy on GT=1 Likert and \pct{29.5} on GT=No binary:
+  GPT-5.4-mini is essentially incapable of flagging dangerous driving
+  in this setup. Future reports on this category should prefer
+  per-class accuracy over the micro-average.
+  \item The Likert prompt is effectively two-class: ``1'' is never
+  emitted. This is a prompt-design weakness -- the benchmark should
+  either reverse the scale, add calibration exemplars, or treat
+  Safety-Likert failures as a label-emission issue to be disentangled
+  from semantic error.
+  \item 5 frames at 1\,fps is too sparse for the violation types in
+  \code{cosmos-drive-dreams}: the GPT reasoning is internally
+  consistent given the frames it received, which means the benchmark
+  partly measures frame-sampling adequacy rather than safety
+  judgement. Pairing the score question with an explicit grounding
+  sub-question (e.g.~``did the ego pass the stop line without
+  stopping?'') would separate perception from judgement.
+\end{itemize}
+
+% ---------------------------------------------------------------
+\subsection{Traffic laws understanding (acc.~\pct{20.75}; \num{527} failures)}
+\label{sec:traffic}
+
+\paragraph{Structure.} Four questions, but two of them carry the
+entire failure mass: \emph{Is the ego car following the traffic
+rules?} (\num{421} failures out of 512 items) and \emph{Is the ego
+car behavior consistent with visible cues of the traffic lights?}
+(106/153). The other two (\emph{Has the ego car stopped?},
+\emph{Are the traffic lights red?}) live above 92\,\% because they
+can be answered from a single frame.
+
+\paragraph{Confusion.} Of the \num{527} in-category failures,
+\pct{99.6} are of the form GT=No~$\to$~pred=Yes. On the dominant
+\emph{following traffic rules} question the ground truth is
+\emph{No} in 510/512 items; GPT answers \emph{Yes} on 419/510
+(\pct{82.2} false-positive rate on the GT=No subset) and
+\emph{No} on both GT=Yes items (\pct{100} false-negative).
+It is therefore essentially a constant-\emph{Yes} classifier on
+the violation-heavy \code{cosmos-drive-dreams} subset.
+
+\paragraph{Recurring failure modes.}
+\begin{description}[style=nextline]
+  \item[Absence-of-evidence reasoning (dominant, $\sim$60\,\% of
+  failures).] ``No obvious sign of'', ``no visible evidence of'',
+  ``no clear violation'' appear in the majority of
+  \code{aggressive\_takeover} outputs. Example
+  (\code{agg\_tk\_016\_Snowy.mp4}): \emph{``no visible lane
+  departures, abrupt maneuvers, or red-light/stop-sign violations
+  \ldots{} driving appears compliant''}.
+  \item[Temporal blindness / fabricated transitions.] The moment the
+  ego enters on red is between sampled frames; GPT sees ``stopped at
+  the line'' then ``past the line'' and \emph{invents} a green
+  transition. Example (\code{cross\_red\_037\_Morning.mp4}):
+  \emph{``The visible overhead traffic lights are red in the earlier
+  frames \ldots{} the car continues ahead once past the stop line,
+  consistent with the signal changing out of view''}.
+  \item[Misattribution of signs/lights to cross-street.] Whenever a
+  stop sign or signal is visible on an intersecting road, GPT
+  reasons \emph{``the sign governs the cross street, not the ego
+  car''} and declares compliance. Example
+  (\code{cross\_stop\_021\_Rainy.mp4}): \emph{``The stop sign is for
+  the cross street at the right and does not require the ego car to
+  stop in this direction''}.
+  \item[Contradictory red-light rationalisation.] GPT correctly sees
+  the red but then writes \emph{``the ego car remains stopped''} or
+  \emph{``creeps cautiously''}, contradicting the ground truth that
+  the clip shows a red-light crossing. Cross-traffic movement is
+  used as evidence that the ego must be waiting.
+  \item[Highway-violation checklist too narrow.] On
+  \code{aggressive\_takeover} clips, the model's violation vocabulary
+  is limited to speeding, shoulder driving, wrong-way, or lane
+  departure; erratic overtaking, tailgating and unsafe gap
+  acceptance are not on its list.
+  \item[Traffic-flow-as-proxy.] \emph{``Other vehicles are passing
+  and merging appropriately''} / \emph{``traffic flow is normal''}
+  is taken as positive evidence of ego lawfulness, instead of
+  evaluating the ego's own trajectory.
+  \item[Weather-as-excuse.] Fog/snow/rain frames are explained as
+  \emph{``cautious driving in low visibility''}, converting perceived
+  caution into a lawfulness judgement.
+\end{description}
+
+\paragraph{Implications.}
+\begin{itemize}
+  \item GPT-5.4-mini cannot detect ``crossed the stop line while
+  the light was still red'' at 1\,fps sampling -- the crossing moment
+  is between frames and the model \emph{interpolates a lawful state
+  change} rather than flagging the ambiguity.
+  \item Its lawfulness rubric is a fixed, narrow checklist; any
+  violation outside that vocabulary (unsafe overtake, tailgating,
+  insufficient stop-sign pause) is invisible.
+  \item It uses scene plausibility and cross-traffic flow as
+  exculpatory evidence for the ego -- exactly the confusion the
+  \code{aggressive\_takeover}, \code{crossing\_red\_lights} and
+  \code{crossing\_stop} subsets are built to probe.
+\end{itemize}
+
+% ---------------------------------------------------------------
+\subsection{Artifacts understanding (acc.~\pct{50.89}; \num{357} failures)}
+\label{sec:artifacts}
+
+\paragraph{Structure.} \code{cosmos-predict1} only. Two questions:
+\emph{Do some objects change shape or appearance?} (402 items,
+\pct{64.68} acc.) and \emph{Does any object appear or disappear
+without continuous motion?} (325 items, \pct{33.85} acc., near chance).
+
+\paragraph{Confusion.} GPT-5.4-mini is heavily \emph{No}-biased: 338
+of 357 in-category failures (\pct{94.7}) are false negatives -- the
+model denies artefacts that the ground truth flags as present. The
+skew is most extreme on the appear/disappear question (207/215 =
+\pct{96.3} FN).
+
+\paragraph{Recurring failure modes.}
+\begin{description}[style=nextline]
+  \item[``Continuous motion'' over-attribution.] Any positional
+  change across 5 frames is rationalised as normal
+  camera/vehicle motion, parallax or occlusion; this single pattern
+  accounts for most of the 207 false negatives on the
+  appear/disappear question. Example
+  (\code{pedestrians\_006.mp4}): \emph{``cones, barriers, and the
+  SUV changing position smoothly across frames \ldots{} visible
+  changes are consistent with camera/vehicle motion and people
+  walking out of frame''}.
+  \item[Self-contradiction then explaining away.] GPT notices a
+  discontinuity, describes it correctly, and dismisses it in the
+  same paragraph. Example (\code{cross\_stop\_001\_Foggy.mp4}):
+  \emph{``a white vehicle at the far right edge becomes visible in
+  later frames after not being present earlier \ldots{} no clear
+  evidence of an object popping in or out''}.
+  \item[``Stable shape'' heuristic ignores appearance warping.] When
+  silhouettes are stable the model declares no artefact, overlooking
+  texture flicker, identity drift and material inconsistency.
+  \item[5-frame undersampling mistaken for temporal coarseness, not
+  artefacts.] Example (\code{pedestrians\_015\_Night.mp4}):
+  \emph{``the changes look like normal motion between sampled
+  seconds rather than artifact-like popping''}.
+  \item[Weather/lighting laundering.] Rain, fog, snow, glare, night
+  exposure are catch-all alibis for appearance inconsistencies.
+  \item[Edge-of-frame exemption.] Objects popping in at borders are
+  dismissed as ``cropping'' / ``framing''.
+  \item[``Dashcam = physically plausible'' prior.] Answers frequently
+  open with \emph{``the scene is a normal driving clip''}, priming
+  the verdict toward \emph{No}.
+\end{description}
+
+\paragraph{Implications.}
+\begin{itemize}
+  \item At 5 frames / 1\,fps, GPT-5.4-mini is near chance on the
+  harder artefact question (\pct{33.85}) because it cannot separate
+  true synthesis discontinuities from expected inter-frame jumps;
+  its default is to attribute everything to continuous motion.
+  \item Its artefact detector is tuned to gross geometric deformation
+  and largely ignores subtler cues (texture drift, small-object
+  topology, identity shift, sign legibility) -- which is what
+  cosmos-predict1 tends to produce.
+  \item The \pct{94.7} \emph{No}-bias combined with the
+  ``dashcam looks plausible'' prior means GPT behaves as an artefact
+  sceptic rather than a detector. The useful intervention is not more
+  frames alone but a prompt/harness that forces explicit
+  per-object continuity checks (agentic tool use of FFT, SSIM, RAFT,
+  SAM), because even when the model verbally notices a discontinuity
+  it still resolves toward \emph{No}.
+\end{itemize}
+
+% ---------------------------------------------------------------
+\subsection{Spatial-temporal understanding (acc.~\pct{69.03}; 105 failures)}
+\label{sec:spatial}
+
+\paragraph{Structure.} Two meaningful questions: \emph{On which side
+is the ego car overtaking?} (133 items, \pct{35.34} acc.) and
+\emph{Has the ego car stopped?} (201 items, \pct{92.04} acc., shared
+with the Traffic-laws bucket in the GT categorisation). The overtake
+question accounts for 86 of 105 category failures (\pct{82}).
+
+\paragraph{Confusion (overtake).} On the 86 overtake failures:
+\begin{center}
+\begin{tabular}{l|ccc}
+ & pred Left & pred Right & pred ``not overtaking'' \\
+\hline
+GT Right ($n=84$) & 77 & 0 & 7 \\
+GT Left  ($n=2$)  & 0  & 2 & 0 \\
+\end{tabular}
+\end{center}
+\pct{91.7} of GT=Right failures answered \emph{Left}; not a single
+error replaced Right~$\to$~Right. The two GT=Left examples were
+both answered \emph{Right}. The label-level bias is therefore not
+``always Left'' but \emph{systematically wrong about which side it
+is on}. The ``not overtaking'' escape hatch is rare (7/86).
+
+On \emph{Has the ego car stopped?}, all 16 failures are pure false
+positives (GT=No $\to$ pred=Yes).
+
+\paragraph{Recurring failure modes.}
+\begin{description}[style=nextline]
+  \item[Dashcam/egocentric left--right inversion (dominant, $\sim$60
+  of 86).] The model describes the scene correctly in ego-relative
+  terms and then flips the label at the final step. Example
+  (\code{agg\_tk\_001\_Night.mp4}): \emph{``overtaken vehicle visible
+  to the right of the ego car as it falls behind \ldots{} indicating
+  a left-side overtake''}.
+  \item[Reference-frame swap.] The answer is phrased from the
+  \emph{overtaken} vehicle's perspective instead of the ego's.
+  Example (\code{agg\_tk\_032\_Foggy.mp4}): \emph{``passes it on the
+  truck's left side \ldots{} indicating a left-side overtake''}.
+  \item[Refusal / ``not overtaking''.] When the 5 frames do not
+  resolve the motion (night, fog, slow scale change), GPT hedges to
+  ``not overtaking'' rather than committing.
+  \item[Lane-of-ego confusion.] The ego is stated to be in the
+  rightmost lane \emph{and} the overtake is declared left-side in
+  the same sentence. Example (\code{agg\_tk\_003\_Morning.mp4}):
+  \emph{``ego car is moving forward in the rightmost lane \ldots{}
+  the overtake is happening on the left side''}.
+  \item[False-stationary from static layout.] For ``Has the ego car
+  stopped?'', with only 5 sparse frames and a visible stop marking,
+  GPT over-weights the static layout and calls the car stopped even
+  when cross-traffic and pedestrians clearly move.
+\end{description}
+
+\paragraph{Implications.}
+\begin{itemize}
+  \item Left/right is the weakest primitive here: the model correctly
+  describes object positions in natural language and still outputs the
+  opposite label -- the bug is at the labelling step, not perception.
+  \item The direction of error is not symmetric -- a
+  label-flipping post-processor (``if the model says \emph{Left} on
+  this question, output \emph{Right}'') would recover most of the
+  lost accuracy, which by itself is diagnostic of a systematic prior
+  rather than random confusion.
+  \item Sparse-frame ambiguity makes GPT either hedge to ``not
+  overtaking'' or over-interpret static layouts as ``stopped''.
+  Spatial-temporal questions that hinge on fine ego-relative geometry
+  are fragile under the 5-frame regime.
+\end{itemize}
+
+% ---------------------------------------------------------------
+\subsection{Visual understanding (acc.~\pct{95.72}; 13 failures)}
+\label{sec:visual}
+
+\paragraph{Structure.} Three questions contribute -- \emph{Is the ego
+car on a highway?} (159 items, \pct{96.23}), \emph{Are the traffic
+lights red?} (144 items, \pct{95.14}), and \emph{Is the lighting
+changing?} (1 item, correct). Only 13 failures remain in the whole
+category; 12/13 are false positives (GT=No $\to$ pred=Yes).
+
+\paragraph{Recurring failure modes.}
+\begin{description}[style=nextline]
+  \item[Highway over-recognition.] Any wide divided road with
+  barriers or exit signage is called a highway. Example
+  (\code{agg\_tk\_016\_Original.mp4}): \emph{``multi-lane high-speed
+  roadway with lane markings, a concrete barrier, overhead exit
+  signage \ldots{} clear highway/freeway characteristics''}.
+  \item[Red-light hallucination under glare / wet roads.] Sun glare,
+  wet-road reflections and night exposure are mis-interpreted as lit
+  red bulbs. Example (\code{cross\_red\_018\_Golden hour.mp4}):
+  \emph{``The visible traffic lights ahead are illuminated red in
+  multiple frames \ldots{} Although there is strong sun glare, the
+  red lights are still clearly on''}.
+  \item[Cross-direction signal confusion.] In the lone false negative
+  (\code{cross\_red\_037\_Night.mp4}) the model applies the correct
+  heuristic (only count lights controlling ego direction) but
+  mis-identifies which bulb belongs to which approach.
+\end{description}
+
+\paragraph{Implications.}
+\begin{itemize}
+  \item Even on an ``easy'' category, residual errors cluster on
+  category-boundary ambiguity (urban arterial vs.~highway) and
+  adverse conditions (night, rain, snow, golden-hour glare).
+  \item The positive-answer bias (12/13 errors are false positives)
+  is consistent with the category-independent pattern observed in
+  Safety, Traffic laws and Artifacts: when plausible visual features
+  are present, GPT commits to \emph{Yes}.
+\end{itemize}
+
+\section{Synthesis and concluding remarks}
+
+Stitching together the six per-category audits, GPT-5.4-mini at
+5-frame/1-fps inline-image resolution exhibits a small number of
+cross-cutting systematic biases that dominate the absolute failure
+count:
+\begin{enumerate}
+  \item \textbf{Real-class prior on generation detection.} \pct{88.9}
+  false-negative rate on Real/Generated, matching the model's total
+  failure to recognise modern diffusion driving videos as synthetic.
+  \item \textbf{Yes-class prior on safety/traffic-law questions.}
+  \pct{82.2} false-positive rate on ``following traffic rules'' and
+  \pct{70.5} miss rate on ``unsafe driving''; the underlying heuristic
+  is absence-of-visible-violation~$=$~compliance.
+  \item \textbf{Midpoint anchor on Likert scales.} The safety Likert
+  never emits ``1''; the realism Likert never under-rates. Both
+  scales therefore degenerate to a two-label response distribution.
+  \item \textbf{No-class prior on artefacts.} \pct{94.7} of artefact
+  failures deny artefacts the GT flags as present; the detector is
+  tuned to gross GAN-era tells, not diffusion-era defects.
+  \item \textbf{Left/Right label flipping on overtakes.}
+  \pct{91.7} of GT=Right overtake failures answered \emph{Left},
+  despite correct ego-relative descriptions.
+  \item \textbf{Absence-of-evidence reasoning.} A recurring pattern
+  across Reality, Safety, Traffic-laws and Artefacts: the model
+  enumerates what is \emph{not} present, then concludes the
+  non-violation / non-artefact answer.
+\end{enumerate}
+
+\noindent Two structural factors compound these biases:
+\begin{itemize}
+  \item \textbf{Temporal budget.} 5 frames at 1\,fps is below the
+  resolution needed to answer questions that hinge on the traversal
+  of a stop line, a red-light crossing or an overtake manoeuvre. The
+  model often interpolates a lawful state change between sampled
+  frames rather than flagging the ambiguity.
+  \item \textbf{Prompt design for the Likert questions.} The 1--3
+  scale as currently worded admits a strong anchor effect at ``2''
+  and makes the ``1'' bin difficult to emit. Calibration exemplars or
+  a reversed scale would likely recover a non-trivial fraction of
+  GT=1 Safety clips.
+\end{itemize}
+
+\noindent The practical consequence for the benchmark is that a
+\emph{single-pass} closed-source VLM like GPT-5.4-mini is poorly
+suited to the Reality, Safety and Traffic-laws categories under the
+current harness. The agentic route (FFT/SSIM/RAFT/SAM as tools driven
+by a VLM over a per-object continuity check) remains the more
+promising path, and the failure inventory above identifies the exact
+primitives that would benefit from external grounding: frame-to-frame
+object continuity for artefacts, stop-line traversal timing for
+traffic laws, and ego-relative side labelling for overtakes.
+
+\appendix
+\section{Reproduction}
+All artefacts referenced in this report are produced by a single
+command,
+\begin{center}
+\code{\$ .venv/bin/python closed\_source\_evaluation/gpt/analysis/run\_analysis.py}
+\end{center}
+which reads \code{closed\_source\_evaluation/gpt/results/gpt\_all\_results.json}
+and the two \code{questions\_*.json} ground-truth files, and writes:
+\begin{itemize}
+  \item \code{gpt\_results\_enriched.parquet} / \code{.csv} -- one row per
+  answered question with \code{ground\_truth}, \code{category} and
+  \code{correct} columns.
+  \item \code{gpt\_accuracy\_summary.json} -- overall, per-source,
+  per-category and per-question accuracy tables.
+  \item \code{failures\_by\_category/*\_failures.\{json,parquet\}} --
+  the per-category failure dumps consumed by the Section~3 reviewers.
+\end{itemize}
+
+\end{document}

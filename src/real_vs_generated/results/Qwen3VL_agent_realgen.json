@@ -1,0 +1,702 @@
+[
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_035_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: nt. The combined evidence supports a moderate confidence verdict of generated.\n\nanswer: Generated\nThe FFT analysis shows an anisotropy score of 0.0550, which exceeds the 0.048 threshold for real footage, indicating a high likelihood of AI generation. The visual inspection of the segmented car clips reveals no obvious artifacts such as texture swimming, component morphing, or rigidity violations. However, the primary FFT metric is a strong indicator of synthetic content. Combining the high anisotropy score with the clean visual artifacts results in a moderate confidence verdict of generated.\n\nevaluation: The video exhibits an anisotropy score of 0.0550, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. While the segmented car clips show no visible artifacts like texture swimming or morphing, the FFT analysis is a strong indicator of synthetic content. The combined evidence supports a moderate confidence verdict of generated.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 39.63
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_015_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0502, exceeding the 0.048 threshold for AI-generated content, indicating synthetic patterns. While SAM segmentation reveals no visible artifacts like wobbling or morphing in the cars, the strong FFT evidence overrides the clean visuals. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 41.07
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_014_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0536, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. While the visual inspection of segmented cars showed no obvious artifacts like wobbling or morphing, the strong FFT signal is a reliable indicator of generation. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 44.12
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_011_Snowy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0527, exceeding the 0.048 threshold for AI-generated content, indicating synthetic directional energy patterns. Although SAM segmentation showed no visible rigidity violations or texture swimming, the strong FFT evidence overrides the clean visual appearance. The combined analysis indicates the video is likely AI-generated.",
+    "answer": "Generated",
+    "time_seconds": 46.3
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_032_Foggy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0666, which is above the 0.048 threshold for real footage, indicating a high likelihood of AI generation. Although the SAM segmentation shows no visible artifacts like rigidity violations or texture swimming, the FFT result is a strong indicator of synthetic content. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 48.16
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/agg_tk_035_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0451, which is below the 0.048 threshold for AI-generated content, indicating a real video. The SAM segmentation isolated multiple cars, and all resulting clips showed stable, rigid objects with no signs of morphing, wobbling, or texture swimming. The visual evidence from both the frequency analysis and object segmentation confirms the video is consistent with natural, real-world footage.",
+    "answer": "Real",
+    "time_seconds": 48.44
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_044_Foggy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0772, which is above the 0.048 threshold for AI-generated content, indicating synthetic artifacts. Although SAM segmentation shows no obvious rigidity violations or texture swimming in the isolated clips, the primary FFT signal is a strong indicator of generation. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 49.98
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_007_Rainy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0645, which exceeds the 0.048 threshold for AI-generated content, indicating a high likelihood of being generated. While the SAM segmentation of the cars showed no obvious artifacts like wobbling or morphing, the FFT result is a strong indicator of AI generation. According to the SOP, when FFT indicates generated, the verdict is GENERATOR even if the visual analysis is clean.",
+    "answer": "Generated",
+    "time_seconds": 58.51
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_043_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ean visual inspection. Therefore, the video is likely generated.\", \"answer\": \"Generated\"}}\nThe FFT analysis shows an anisotropy score of 0.0580, which exceeds the 0.048 threshold for real footage, indicating AI-generated characteristics. The visual inspection of the segmented clips reveals no obvious rigidity violations, texture swimming, or component morphing in the car objects. However, the high anisotropy score is a strong indicator of AI generation, and since the visual analysis does not contradict this, the evidence points to a generated video.\n\n{\"name\": \"final_answer\", \"arguments\": {\"evaluation\": \"The FFT analysis returned an anisotropy score of 0.0580, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. While the visual inspection of segmented car objects showed no obvious artifacts like wobbling or morphing, the strong FFT evidence overrides the clean visual inspection. Therefore, the video is likely generated.\", \"answer\": \"Generated\"}}",
+    "answer": "MISSING",
+    "time_seconds": 16.22
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_012_Original.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ing or wobbling. The visual evidence is consistent with natural footage.\", \"answer\": \"Real\"}}\nAfter analyzing the video, the FFT frequency analysis shows an anisotropy score of 0.0462, which is below the 0.048 threshold for AI-generated content, indicating a real video. The visual verification using SAM segmentation shows four cars with stable, rigid structures and no signs of morphing, wobbling, or texture swimming. All objects maintain consistent geometry and motion throughout the clip. The combination of a low anisotropy score and clean, physically consistent object masks supports a real video verdict.\n\nfinal_answer\n{\"name\": \"final_answer\", \"arguments\": {\"evaluation\": \"The FFT analysis returned an anisotropy score of 0.0462, below the 0.048 threshold for generated content, indicating a real video. The SAM segmentation showed four cars with stable, rigid structures and no artifacts like morphing or wobbling. The visual evidence is consistent with natural footage.\", \"answer\": \"Real\"}}",
+    "answer": "MISSING",
+    "time_seconds": 16.24
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_020_Night.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0666, which exceeds the 0.048 threshold for real footage, indicating a high likelihood of AI generation. While the SAM segmentation showed no obvious artifacts like wobbling or morphing in the isolated car clips, the FFT result is a strong indicator of synthetic content. Therefore, the video is classified as generated.",
+    "answer": "Generated",
+    "time_seconds": 26.42
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/df66af93-16e2-4950-9df7-15c5b0fdc187_477212600000_477232600000_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0517, which exceeds the 0.048 threshold for real footage, indicating directional energy patterns typical of AI-generated videos. Although the visual inspection of the segmented car clips did not reveal obvious artifacts like rigidity violations or texture swimming, the primary FFT metric is a strong indicator of generation. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 30.05
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/wrong_way_driving/WWD_006_Foggy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ar window show texture swimming, where the surface details seem to shift and blur unnaturally.\n- In Clip 3 (a red car), the wheels and door handles appear to morph and merge with the body, indicating component morphing.\n- In Clip 4 (a white car), the front grille and headlights exhibit a melting effect, with edges blurring into the surrounding fog.\n\nThese artifacts—rigidity violations, texture swimming, and component morphing—are all strong indicators of AI generation. Since the FFT analysis failed, the visual evidence from the SAM masks is the primary basis for my conclusion.\n\nfinal_answer\n{\"name\": \"final_answer\", \"arguments\": {\"evaluation\": \"The video is likely generated. The FFT analysis failed, but the SAM masks reveal multiple AI artifacts: rigidity violations (wobbling rooflines), texture swimming (shifting surface details), and component morphing (wheels merging with the body). These visual inconsistencies are strong indicators of an AI-generated video.\", \"answer\": \"Generated\"}}",
+    "answer": "MISSING",
+    "time_seconds": 76.53
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_016_Snowy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis returned an anisotropy score of 0.042, which is below the 0.048 threshold, indicating the video is likely real. The SAM segmentation isolated a car, and visual inspection of the clip shows no signs of AI artifacts such as rigidity violations, texture swimming, or component morphing. The car maintains a consistent shape and structure throughout the clip, with no wobbling or melting of the roof, doors, or windows. The snowfall and lighting conditions are consistent and physically plausible. Based on the low anisotropy score and the absence of any visual artifacts, the video is determined to be real.",
+    "answer": "Real",
+    "time_seconds": 82.72
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_004_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, but the visual analysis of isolated objects reveals severe rigidity violations. The green and white vans exhibit unnatural wobbling and deformation of their roofs and windows, along with texture swimming, which are definitive artifacts of AI generation. These physical impossibilities confirm the video is not real.",
+    "answer": "Generated",
+    "time_seconds": 83.48
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_012_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: consistent with a rigid object.\n- In Clip 2 (a silver car), the rear window and taillight area show a slight \"melting\" or warping effect, particularly noticeable when the car turns.\n- In Clip 3 (a dark SUV), the front wheel and fender appear to morph slightly, with the wheel shape changing between frames.\n- In Clip 4 (a light-colored car), the side mirror and door handle show a \"swimming\" texture, where the surface details shift unnaturally.\n\nThese artifacts—wobbling frames, melting textures, and component morphing—are strong indicators of AI generation. Even without the FFT score, the consistent presence of these physical impossibilities across multiple objects in the video points to a generated source.\n\nevaluation: The video exhibits multiple AI-generated artifacts, including wobbling rooflines, melting textures on windows, and morphing wheels and mirrors. These physical impossibilities are inconsistent with real-world physics and confirm the video is not authentic. answer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 87.1
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/agg_tk_033_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: s an anisotropy score of 0.0414, which is below the 0.048 threshold for AI-generated content, indicating a real video. The visual inspection of the segmented car clips reveals no signs of rigidity violations, texture swimming, or component morphing. All objects maintain consistent structure and motion throughout the sequence. The combination of a low anisotropy score and clean visual artifacts supports the conclusion that the video is authentic.\n\n{\"name\": \"final_answer\", \"arguments\": {\"evaluation\": \"The FFT analysis returned an anisotropy score of 0.0414, which is below the 0.048 threshold for AI-generated content, indicating a real video. The visual inspection of the segmented car clips revealed no signs of rigidity violations, texture swimming, or component morphing. All objects maintain consistent structure and motion throughout the sequence. The combination of a low anisotropy score and clean visual artifacts supports the conclusion that the video is authentic.\", \"answer\": \"Real\"}}",
+    "answer": "MISSING",
+    "time_seconds": 24.14
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_035_Foggy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: eration. Therefore, the video is likely generated.\", \"answer\": \"Generated\"}}\nThe FFT analysis shows an anisotropy score of 0.0591, which exceeds the 0.048 threshold for real footage, indicating AI-generated characteristics. The visual inspection of the segmented car clips reveals no obvious rigidity violations, texture swimming, or component morphing. However, the high anisotropy score is a strong indicator of AI generation. Combining the FFT result with the clean visual artifacts, the evidence points to a generated video.\n\n{\"name\": \"final_answer\", \"arguments\": {\"evaluation\": \"The FFT analysis returned an anisotropy score of 0.0591, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. Although the visual inspection of the segmented car clips showed no obvious artifacts like rigidity violations or texture swimming, the high anisotropy score is a strong indicator of AI generation. Therefore, the video is likely generated.\", \"answer\": \"Generated\"}}",
+    "answer": "MISSING",
+    "time_seconds": 24.16
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_059_Night.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis failed, but the SAM masks reveal clear AI artifacts. The blue car shows rigidity violations with wobbling roof and windows, and texture swimming on the body. These physical impossibilities indicate the video is generated.",
+    "answer": "Generated",
+    "time_seconds": 98.2
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_stop_003_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: nt, indicating synthetic directional energy patterns. Although SAM segmentation shows no clear rigidity violations, the primary FFT evidence strongly suggests the video is generated.\", answer=\"Generated\")\nThe FFT analysis shows an anisotropy score of 0.0523, which exceeds the 0.048 threshold for AI-generated content, indicating directional energy patterns typical of synthetic videos. While the SAM segmentation isolates objects cleanly without obvious rigidity violations or texture swimming, the primary FFT metric strongly suggests the video is generated. The combination of a high anisotropy score with clean visual artifacts points to a synthetic origin.\n\nfinal_answer(evaluation=\"The FFT analysis reveals an anisotropy score of 0.0523, exceeding the 0.048 threshold for AI-generated content, indicating synthetic directional energy patterns. Although SAM segmentation shows no clear rigidity violations, the primary FFT evidence strongly suggests the video is generated.\", answer=\"Generated\")",
+    "answer": "MISSING",
+    "time_seconds": 28.31
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_crash_014_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: s no visible rigidity violations, the FFT analysis provides strong evidence of synthesis. answer: Generated\nThe FFT analysis returned an anisotropy score of 0.0690, which exceeds the 0.048 threshold for AI-generated content, indicating strong evidence of artificial generation. While the SAM segmentation isolated four cars without visible rigidity violations or texture swimming in the cropped clips, the primary FFT metric is decisive. The high anisotropy score points to characteristic cross-shaped artifacts in the frequency domain, consistent with AI-generated video. Therefore, despite the clean visual segmentation, the spectral evidence overrides the visual inspection.\n\nevaluation: The video exhibits high-frequency directional energy patterns (anisotropy = 0.0690 > 0.048 threshold) typical of AI-generated content, indicating artificial generation. Although object segmentation shows no visible rigidity violations, the FFT analysis provides strong evidence of synthesis. answer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 22.33
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_032_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video appears to be real. The analysis of the isolated car objects shows no signs of AI-generated artifacts such as rigidity violations, texture swimming, or component morphing. The car's structure is stable, and the textures are consistent. Although the FFT analysis failed due to a tool error, the visual evidence from the SAM segmentation supports the conclusion that the video is authentic.",
+    "answer": "Real",
+    "time_seconds": 109.62
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_red_010.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0433, which is below the 0.048 threshold for AI-generated content, indicating a real video. The SAM segmentation analysis confirmed that all objects, including cars and a bus, maintain rigid structure and consistent textures without any morphing or wobbling artifacts. The scene exhibits natural motion and lighting, consistent with a real-world driving environment.",
+    "answer": "Real",
+    "time_seconds": 39.34
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/9Y9PlE7b1S8_29616_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0499, which exceeds the 0.048 threshold for AI-generated content, indicating synthetic directional energy patterns. Although the SAM masks for the car objects show no obvious rigidity violations or texture swimming, the primary FFT metric is a strong indicator of generation. The combination of a borderline but above-threshold score with clean visual artifacts leads to a moderate confidence verdict.",
+    "answer": "Generated",
+    "time_seconds": 32.95
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_014_Rainy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis returned an anisotropy score of 0.042, which is below the 0.048 threshold, indicating the video is likely real. The SAM segmentation isolated a car, and visual inspection of the clip shows no signs of AI artifacts such as rigidity violations, texture swimming, or component morphing. The car's structure remains stable and consistent throughout the clip, with no wobbling or melting of the roof, doors, or windows. The lighting and reflections on the wet road are consistent with a real-world environment. Based on the low anisotropy score and the absence of visual artifacts, the video is real.",
+    "answer": "Real",
+    "time_seconds": 73.97
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/pedestrians_012_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0596, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. While the SAM segmentation did not reveal any visible rigidity violations or texture artifacts, the high anisotropy score is a strong indicator of AI generation. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 46.45
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/giViRewuugA_25104_7b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis showed an anisotropy score of 0.0440, below the 0.048 threshold for generated content, indicating real footage. Visual inspection of segmented cars revealed no rigidity violations, texture swimming, or morphing, confirming consistent physical behavior. Both analyses support the video being real.",
+    "answer": "Real",
+    "time_seconds": 34.08
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_crash_012_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0546, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. Although the visual inspection of the segmented car clips did not show obvious artifacts like wobbling or texture swimming, the primary FFT metric is a strong indicator of generation. The combined evidence supports a moderate-confidence verdict of generated content.",
+    "answer": "Generated",
+    "time_seconds": 34.07
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/pedestrians_004_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0496, which exceeds the 0.048 threshold for AI-generated content, indicating synthetic artifacts. Although SAM segmentation showed no visible rigidity violations or morphing in the isolated objects, the primary FFT signal is a strong indicator of generation. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 38.22
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_red_008_Golden hour.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0582, exceeding the 0.048 threshold for AI-generated content, indicating synthetic artifacts. The segmentation masks reveal rigidity violations, such as roof breathing and texture swimming on the car's body, confirming the video is not real. Both metrics strongly support a generated origin.",
+    "answer": "Generated",
+    "time_seconds": 32.76
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_brake_003_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0514, exceeding the 0.048 threshold for real footage, indicating AI-generated characteristics. While SAM segmentation shows no obvious visual artifacts like rigidity violations or texture swimming, the FFT result is the primary indicator and strongly suggests the video is generated.",
+    "answer": "Generated",
+    "time_seconds": 31.76
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cyclists_002_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0562, which exceeds the 0.048 threshold for real footage, indicating a high likelihood of AI generation. The primary metric suggests directional energy patterns typical of AI-generated videos. While the SAM segmentation isolates objects cleanly without obvious rigidity violations or texture swimming, the FFT result is decisive. The combination of a high anisotropy score and the absence of visible artifacts in the masks supports a generated verdict. Therefore, the video is likely AI-generated.",
+    "answer": "Generated",
+    "time_seconds": 39.04
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_058_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video is likely generated due to multiple AI artifacts. The blue pickup truck shows significant rigidity violations, with its roof and door frame wobbling unnaturally. The textures on the car's surface exhibit 'swimming,' and the wheels and mirrors appear to morph into the body. These physical impossibilities are strong indicators of a synthetic video.",
+    "answer": "Generated",
+    "time_seconds": 145.94
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/MXxot9M4-iE_41280_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ynthetic patterns. Although no visual artifacts were detected in the segmented clips, the primary metric strongly suggests the video is generated.\n\nanswer: Generated\nThe FFT analysis indicates an anisotropy score of 0.0507, which exceeds the 0.048 threshold for AI-generated content, suggesting the presence of directional energy patterns typical of synthetic videos. While the visual inspection of the segmented car clips shows no obvious rigidity violations or texture swimming, the primary FFT metric strongly points toward a generated origin. Given that the anisotropy score is above the threshold and the visual artifacts are not evident, the evidence leans toward the video being AI-generated.\n\nevaluation: The FFT analysis shows an anisotropy score of 0.0507, exceeding the 0.048 threshold for AI-generated content, indicating synthetic patterns. Although no visual artifacts were detected in the segmented clips, the primary metric strongly suggests the video is generated.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 24.08
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_030_Original.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis failed, but the visual inspection using SAM segmentation shows no AI artifacts. The cars in the video maintain rigid structures, with no wobbling, melting, or texture swimming. All objects appear physically consistent and stable. Therefore, the video is likely real.",
+    "answer": "Real",
+    "time_seconds": 110.2
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/j4qcANjnLxc_13824_7b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0659, which is above the 0.048 threshold for real footage, indicating a high likelihood of AI generation. While the SAM masks show no visible artifacts like wobbling or morphing, the FFT evidence is the primary indicator and is conclusive. Therefore, the video is generated.",
+    "answer": "Generated",
+    "time_seconds": 33.73
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_red_024_Night.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0542, which is above the 0.048 threshold for real footage, indicating AI-generated characteristics. The visual inspection of the car clips showed no obvious artifacts like rigidity violations or texture swimming. However, the FFT result is a strong indicator of generation, and since no physical impossibilities were detected, the evidence points to a generated video with moderate confidence.",
+    "answer": "Generated",
+    "time_seconds": 33.62
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/bqiM7F6TDfo_43008_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0534, which exceeds the 0.048 threshold for real footage, indicating the video is likely generated. The visual inspection of the segmented car clips showed no obvious artifacts like wobbling or morphing. However, the FFT result is a strong indicator of AI generation, and since the visual inspection did not reveal any contradictory artifacts, the primary evidence points to the video being generated.",
+    "answer": "Generated",
+    "time_seconds": 46.98
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_brake_002.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0337, which is below the 0.048 threshold for AI-generated content, indicating a real video. The visual inspection of the segmented car objects reveals no signs of rigidity violations, texture swimming, or component morphing. The car's structure remains stable and consistent throughout the clip, with no unnatural deformations. Both the frequency analysis and visual verification support the conclusion that the video is authentic.",
+    "answer": "Real",
+    "time_seconds": 40.69
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/nOP1blfMCTg_25392_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0577, exceeding the 0.048 threshold for AI-generated content. Additionally, SAM segmentation reveals severe rigidity violations, such as the streetlight pole warping and fragmenting, which is a clear artifact of AI generation. The combination of these artifacts confirms the video is not real.",
+    "answer": "Generated",
+    "time_seconds": 40.95
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/wrong_way_driving/WWD_011_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output:  clip, which isolates a car, to check for rigidity violations, texture swimming, or component morphing.\nI have analyzed the video clips isolated by the SAM segmentation tool. In all four clips, the cars exhibit clear signs of AI-generated artifacts. The rooflines and window frames of the vehicles wobble and deform as they move, which is a classic rigidity violation. The textures on the car bodies appear to \"swim\" and shift unnaturally, and the shapes of the wheels and mirrors change slightly from frame to frame. These inconsistencies are not consistent with real-world physics and are strong indicators of a generated video. Although the frequency analysis tool failed, the visual evidence from the SAM masks is conclusive.\n\nevaluation: The video shows clear AI-generated artifacts, including rigidity violations (wobbling rooflines and windows), texture swimming, and component morphing in the cars. These visual inconsistencies are definitive evidence of a generated video.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 99.65
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/jKrJezTsVUk_9216_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0468, below the 0.048 threshold for generated content, indicating real footage. Visual inspection of SAM masks shows no AI artifacts like wobbling or morphing. The car's motion and interaction with the environment are physically consistent.",
+    "answer": "Real",
+    "time_seconds": 52.67
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_037_Rainy.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ne. answer: Real\nThe FFT analysis returned an error, which prevents a definitive assessment of the video's authenticity based on frequency patterns. However, the visual analysis of the isolated objects provides strong evidence. The segmentation masks show four cars, and in each clip, the vehicles exhibit rigid, consistent geometry. There are no signs of rigidity violations, such as wobbling roofs or melting windows, nor is there any texture swimming or component morphing. The cars maintain their physical integrity throughout the sequence, and the scene is consistent with a real-world driving environment on a rainy day. Given the absence of any AI-generated artifacts in the visual analysis, the video is consistent with a real recording.\n\nevaluation: The FFT analysis failed, but the visual inspection of segmented cars shows no AI artifacts like wobbling, melting, or texture swimming. The vehicles maintain rigid structure and consistent physics, indicating a real-world scene. answer: Real",
+    "answer": "MISSING",
+    "time_seconds": 131.18
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_crash_002.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0381, which is below the 0.048 threshold, indicating a real video with high confidence. The visual verification using SAM segmentation isolated four objects, all of which were clean and showed no signs of AI artifacts such as rigidity violations, texture swimming, or component morphing. The car's roof, windows, and body remained stable and consistent throughout the clip. Given that both the frequency analysis and visual inspection confirm the video is real, the evidence strongly supports a real video.",
+    "answer": "Real",
+    "time_seconds": 35.41
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/scB_bYG27yI_101328_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0414, which is below the 0.048 threshold for generated content, indicating a real video. The visual analysis of segmented car clips showed no signs of AI artifacts such as rigidity violations, texture swimming, or morphing. The car maintains a consistent shape and structure, and the motion is physically plausible. Therefore, the video is real.",
+    "answer": "Real",
+    "time_seconds": 43.2
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/pedestrians_014_Sunny.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0683, which exceeds the 0.048 threshold for real footage, indicating a high likelihood of AI generation. While the visual inspection of the isolated objects showed no clear artifacts like wobbling or morphing, the primary frequency analysis is a strong indicator of synthetic content. Therefore, the video is likely generated.",
+    "answer": "Generated",
+    "time_seconds": 54.09
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/ur8ygTh_wF0_2496_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output:  which exceeds the 0.048 threshold for real footage, indicating AI-generated characteristics. Additionally, the visual inspection of the segmented car objects reveals significant rigidity violations: the roof and windows of the buildings exhibit a wobbling, melting effect, and the textures on the car surfaces appear to \"swim\" during motion. These artifacts are consistent with AI-generated content. The combination of a high anisotropy score and clear physical impossibilities in the object rigidity confirms the video is not real.\n\n{\"name\": \"final_answer\", \"arguments\": {\"evaluation\": \"The FFT analysis returned an anisotropy score of 0.0513, which exceeds the 0.048 threshold for real footage, indicating AI-generated characteristics. Visual inspection of the segmented objects revealed severe rigidity violations, including wobbling and melting of building roofs and windows, and swimming textures on the car surfaces. These artifacts confirm the video is AI-generated.\", \"answer\": \"Generated\"}}",
+    "answer": "MISSING",
+    "time_seconds": 36.29
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_stop_009_Morning.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis shows an anisotropy score of 0.0621, which is above the 0.048 threshold for AI-generated content, indicating a high likelihood of artificial generation. While the SAM segmentation of the car shows no obvious visual artifacts like wobbling or morphing, the primary FFT signal is a strong indicator of AI generation. Therefore, the video is classified as generated.",
+    "answer": "Generated",
+    "time_seconds": 34.94
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/Xy_FYVEFVnk_39840_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.0482, which exceeds the 0.048 threshold for AI-generated content, indicating a moderate likelihood of being generated. While visual inspection with SAM segmentation showed no obvious artifacts like rigidity violations or texture swimming, the FFT result is the primary indicator. Therefore, the video is classified as generated.",
+    "answer": "Generated",
+    "time_seconds": 42.4
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000009.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: analysis shows no AI artifacts and the FFT analysis failed, I must rely on the visual evidence. The clips are consistent with real-world physics and object behavior.\n\nReal\nThe frequency analysis tool returned an error, so I cannot use the FFT score to determine authenticity. However, I will proceed with the visual verification using the SAM masks.\n\nI have analyzed the isolated clips of the cars in the video. In all clips, the objects maintain their physical integrity. The roof, doors, and windows of the cars do not wobble, breathe, or melt. The textures on the car surfaces are stable and do not exhibit \"swimming\" artifacts. The wheels and other components do not change shape or merge into the body. There are no signs of rigidity violation, texture swimming, or component morphing in any of the clips.\n\nSince the visual analysis shows no AI artifacts and the FFT analysis failed, I must rely on the visual evidence. The clips are consistent with real-world physics and object behavior.\n\nReal",
+    "answer": "MISSING",
+    "time_seconds": 40.5
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000001.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: idence from the SAM masks strongly supports the video being real.\nanswer: Real\nThe FFT analysis returned an error, so I cannot use the anisotropy score to determine authenticity. However, I will analyze the SAM masks for visual artifacts.\n\nUpon reviewing the isolated clips of the cars, I observe the following:\n- The red SUV and the black SUV maintain consistent, rigid shapes throughout the video.\n- There is no evidence of texture swimming, component morphing, or rigidity violations in any of the clips.\n- The lighting, reflections, and shadows on the vehicles are consistent with a real-world scene.\n\nSince the visual analysis of the segmented objects shows no AI-generated artifacts and the FFT analysis failed, the evidence points to a real video.\n\nevaluation: The video shows consistent, physically plausible motion and object rigidity with no signs of AI artifacts. Although the FFT analysis failed, the visual evidence from the SAM masks strongly supports the video being real.\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 57.49
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000004.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: from the video: a white car, a dark car, a yellow truck, and a building. Upon close inspection of the clips, all objects maintain their structural integrity. The white car's roof, doors, and windows do not wobble or melt. The dark car's wheels and body remain rigid and do not morph. The yellow truck's structure is stable, and the building's facade shows no signs of texture swimming or deformation. There are no visible AI artifacts like component morphing or rigidity violations in any of the clips.\n\nSince the visual analysis shows no evidence of AI-generated artifacts and the FFT analysis failed, the video is consistent with a real recording.\n\nevaluation: The video shows a consistent, real-world street scene with no visible AI artifacts. The objects maintain their structural integrity, and there are no signs of rigidity violations, texture swimming, or morphing. Although the FFT analysis failed, the visual evidence from the SAM masks strongly supports the video being real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 58.11
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000010.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: or, which prevents the use of the FFT method for authenticity assessment. Therefore, I will rely solely on the visual analysis from the `get_masks` tool to evaluate the video.\n\nThe `get_masks` tool isolated four objects, all of which are cars. Upon reviewing the cropped clips, I observed the following:\n- The cars maintain their rigid structure throughout the video.\n- There are no signs of texture swimming or component morphing (e.g., wheels or windows do not change shape).\n- The roof, door, and window frames are stable and do not wobble or melt.\n\nSince the visual analysis shows no AI-generated artifacts and the FFT analysis could not be performed, the evidence from the visual inspection points to a real video.\n\nevaluation: The video shows no signs of AI-generated artifacts such as wobbling, melting, or texture swimming in the isolated car objects. Although the FFT analysis failed, the visual evidence from the SAM segmentation supports the conclusion that the video is real. answer: Real",
+    "answer": "MISSING",
+    "time_seconds": 40.55
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000003.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: se inspection of the clips, I observe the following:\n- The cars maintain their rigid structure throughout the video. There is no wobbling, melting, or morphing of the roof, doors, or windows.\n- The textures on the car surfaces are stable and do not exhibit \"swimming\" or distortion as the vehicle moves.\n- The lighting and shadows on the cars are consistent with the real-world environment.\n- All objects, including the parked cars and the truck, appear physically consistent and stable.\n\nSince the SAM analysis shows no signs of AI-generated artifacts and the FFT analysis failed, I must rely on the visual evidence. The video displays consistent, real-world physics and object behavior.\n\nevaluation: The video shows no signs of AI-generated artifacts such as wobbling, morphing, or texture swimming. The cars maintain their rigid structure and the lighting is consistent. Although the FFT analysis failed, the visual evidence from the SAM masks strongly supports the video being real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 58.16
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000005.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video shows no signs of AI generation. The cars maintain consistent rigidity and texture, with no wobbling, melting, or morphing. The visual analysis confirms the scene is physically plausible.",
+    "answer": "Real",
+    "time_seconds": 70.15
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000006.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, so the primary signal could not be used. However, the SAM segmentation analysis of four cars showed no visual artifacts such as rigidity violations, texture swimming, or component morphing. The cars maintain their physical integrity and move consistently, which is characteristic of a real-world scene. Therefore, the video is real.",
+    "answer": "Real",
+    "time_seconds": 68.81
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000002.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: component morphing (wheels changing shape).\n\nAfter reviewing the clips, I observe that the cars maintain their structural integrity throughout the video. The roof, windows, and doors do not wobble or deform. The textures on the car surfaces are stable and do not exhibit any \"swimming\" effect. The wheels and other components maintain their shape and do not merge into the car body. There are no visible signs of AI-generated artifacts in the segmentation masks.\n\nSince the visual analysis shows no evidence of AI artifacts and the FFT analysis failed, I will rely on the visual evidence. The video appears to be a real recording of a traffic scene.\n\nevaluation: The video shows a realistic traffic scene with consistent lighting, shadows, and camera motion. The segmentation masks confirm that the cars are rigid and stable, with no signs of AI-generated artifacts like wobbling or morphing. Although the FFT analysis failed, the visual evidence strongly supports the video being real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 70.44
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000008.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video shows a nighttime driving scene with multiple cars. The FFT analysis failed, but the SAM segmentation tool isolated four cars. A detailed inspection of these clips revealed no signs of AI artifacts such as wobbling, melting, or texture swimming. The cars maintain their structural integrity and physical properties throughout the sequence.",
+    "answer": "Real",
+    "time_seconds": 60.85
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000012.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: \nanswer: Real\nThe frequency analysis tool returned an error, so I cannot use the FFT score to determine authenticity. However, I have analyzed the video using the SAM segmentation tool to check for AI-generated artifacts. The tool isolated four cars, and upon close inspection of the clips, I found no evidence of rigidity violations, texture swimming, or component morphing. The cars maintain their physical structure and textures consistently throughout the video. Since the visual analysis shows no signs of AI artifacts and the FFT analysis failed, the video appears to be real.\n\nevaluation: The video shows a realistic urban traffic scene with consistent lighting, reflections, and camera motion. The SAM segmentation analysis of four cars revealed no AI-generated artifacts such as wobbling, melting, or texture swimming. The physical properties of the vehicles are stable and coherent. Although the FFT analysis failed, the visual evidence strongly supports the video being real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 52.43
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/lT4AML9VU2Q_79200_14b.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: o a software error, preventing a direct FFT analysis. However, I can proceed with the visual verification using the `get_masks` tool results.\n\nThe segmentation analysis isolated two objects: the Xfinity truck and a bus. Upon examining the clips, the Xfinity truck shows no signs of AI-generated artifacts. The roof, windows, and body panels maintain rigid structure throughout the clip. The textures on the truck's surface are stable and do not exhibit \"swimming\" or \"melting\" effects. The wheels and other components maintain their shape and do not morph. The bus on the left also appears physically consistent. Since the visual analysis shows no rigidity violations or texture artifacts, and the FFT tool is unavailable, the evidence points to a real video.\n\nevaluation: The video shows a consistent, physically plausible scene with no detectable AI artifacts in the vehicle's structure or textures. Although the FFT analysis failed, the visual inspection confirms the scene's realism. answer: Real",
+    "answer": "MISSING",
+    "time_seconds": 92.52
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000007.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis failed, but the object segmentation analysis showed no artifacts. The cars maintain rigid structure, consistent lighting, and realistic motion, with no signs of morphing or texture swimming. The visual evidence is consistent with a real video.",
+    "answer": "Real",
+    "time_seconds": 65.78
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000013.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis failed, so the verdict relies on visual inspection. The SAM segmentation isolated a car and a bus. The car clip shows no rigidity violations, texture swimming, or component morphing. The vehicle maintains a stable, physically consistent shape throughout the clip. Therefore, the video is real.",
+    "answer": "Real",
+    "time_seconds": 59.18
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000011.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, but the SAM segmentation analysis shows no AI artifacts. The cars maintain rigid structure, with no wobbling, melting, or texture swimming. The scene is consistent with a real-world environment. Therefore, the video is real.",
+    "answer": "Real",
+    "time_seconds": 64.41
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000019.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: lack of a valid FFT score, strongly indicates the video is not real.\n\nevaluation: The video shows clear AI-generated artifacts, including a wobbling and melting effect on the car's structure, which violates physical rigidity. Although the frequency analysis failed, the visual evidence from the segmentation masks is conclusive.\n\nanswer: Generated\nThe frequency analysis returned an error, but the visual analysis of the car masks shows clear artifacts. The car's structure, particularly the roof and windows, exhibits a wobbling and melting effect across the frames, which is a classic sign of AI generation. This rigidity violation, combined with the lack of a valid FFT score, strongly indicates the video is not real.\n\nevaluation: The video shows clear AI-generated artifacts, including a wobbling and melting effect on the car's structure, which violates physical rigidity. Although the frequency analysis failed, the visual evidence from the segmentation masks is conclusive.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 40.61
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000016.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis failed, but the visual inspection using SAM segmentation shows no artifacts. The car maintains its rigidity and structure without any signs of morphing, wobbling, or texture swimming. This is consistent with a real video.",
+    "answer": "Real",
+    "time_seconds": 51.06
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000020.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: r generated. However, I can analyze the visual artifacts using the SAM segmentation results.\n\nThe segmentation masks isolate three cars in the video. Upon close inspection of the clips, the cars exhibit normal physical behavior. The roof, doors, and windows maintain their rigid structure throughout the clip, with no signs of wobbling, melting, or texture swimming. The wheels and body panels remain consistent in shape and do not show any morphing or merging. The lighting and reflections on the car surfaces are consistent with a real-world night driving scene.\n\nSince the visual analysis shows no evidence of AI-generated artifacts and the FFT analysis failed, the available evidence points to the video being real.\n\nfinal_answer(evaluation=\"The frequency analysis failed, but the visual inspection of the segmented cars shows no AI artifacts such as wobbling, melting, or texture swimming. The cars maintain their rigid structure and realistic lighting, indicating a real video.\", answer=\"Real\")",
+    "answer": "MISSING",
+    "time_seconds": 38.32
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000022.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, but the SAM segmentation analysis shows a single car with no visible artifacts. The car maintains a rigid structure and consistent shape throughout the clip, with no signs of texture swimming or morphing. This is consistent with a real-world recording.",
+    "answer": "Real",
+    "time_seconds": 38.15
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000017.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.045, below the 0.048 threshold, indicating the video is likely real. The SAM segmentation analysis isolated three cars, and in all clips, the objects maintain rigid structure with no signs of morphing, wobbling, or texture swimming. The car bodies, windows, and wheels remain stable and consistent throughout the motion. Given the low anisotropy score and the absence of any AI-generated artifacts in the visual analysis, the evidence strongly supports the video being real.",
+    "answer": "Real",
+    "time_seconds": 51.23
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000015.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video shows no signs of AI-generated artifacts. The car maintains its structural integrity and textures are stable, with no evidence of rigidity violations, texture swimming, or component morphing. The visual evidence from the object masks indicates a real-world recording.",
+    "answer": "Real",
+    "time_seconds": 58.71
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000021.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis returned an anisotropy score of 0.045, which is below the generated threshold of 0.048, indicating the video is likely real. The SAM segmentation isolated three cars, and a detailed visual inspection of the clips shows no signs of AI artifacts such as texture swimming, component morphing, or rigidity violations. The car bodies, windows, and wheels maintain consistent shape and structure throughout the motion. The lighting and reflections are consistent with a real-world nighttime driving scene. Based on the low anisotropy score and the absence of any physical impossibilities in the object masks, the evidence strongly supports the video being real.",
+    "answer": "Real",
+    "time_seconds": 49.74
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000018.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, but the SAM segmentation masks show no signs of AI artifacts. The cars in the video maintain rigid structures, with no wobbling, melting, or texture swimming. The wheels and body panels are consistent and stable. Based on the visual evidence from the masks, the video is likely real.",
+    "answer": "Real",
+    "time_seconds": 65.05
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000023.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: mplete absence of detectable objects is a strong indicator of AI generation.\n\nanswer: Generated\nThe frequency analysis tool returned an error, making the FFT score unreliable. However, the `get_masks` tool was able to process the video and returned 0 objects. This is a critical artifact: a driving scene with no detectable cars, despite the presence of road markings and other vehicles in the original frames. This complete absence of detectable objects is highly anomalous and strongly suggests the video is not a real recording. The lack of any segmentation results for a car, a primary object in the scene, indicates a fundamental failure in the video's integrity, which is a hallmark of AI-generated content.\n\nevaluation: The video is likely generated because the object segmentation tool failed to detect any cars, which is physically impossible in a real driving scene with visible traffic. This complete absence of detectable objects is a strong indicator of AI generation.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 52.61
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000027.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ual artifacts using the `get_masks` tool.\n\nThe `get_masks` tool isolated four cars in the video. Upon close inspection of the cropped clips, I observe that the cars maintain their structural integrity throughout the sequence. There is no evidence of rigidity violations (such as wobbling roofs or doors), texture swimming, or component morphing (like wheels changing shape). The objects appear physically consistent and stable.\n\nSince the visual analysis shows no AI-generated artifacts and the FFT analysis failed, I must rely on the visual evidence. The absence of any detectable artifacts in the object masks strongly suggests the video is real.\n\nevaluation: The video shows a consistent and physically plausible scene with no detectable AI artifacts. The isolated cars maintain their structural integrity and do not exhibit any signs of morphing or wobbling. Although the FFT analysis failed, the visual evidence from the object masks supports the conclusion that the video is real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 42.45
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000024.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: alysis` tool failed due to a software error, preventing the FFT analysis. However, the `get_masks` tool was able to run and returned 0 objects, indicating that no car was detected in the video. This is a significant artifact, as the video appears to be a dark, low-resolution scene with faint lights, which is inconsistent with a typical car driving scene. The absence of any detectable object, combined with the extremely low visual information, strongly suggests the video is not a real recording of a car. Given the lack of any identifiable subject and the failure of the analysis tools, the evidence points to a generated or corrupted video.\n\nevaluation: The video failed to yield any detectable objects using segmentation, and the FFT analysis tool encountered an error, indicating a highly corrupted or synthetic nature. The complete absence of a car in a scene that appears to be a driving environment is a major red flag. The video is likely generated or heavily corrupted.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 50.66
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000028.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video shows consistent, physically plausible motion and stable object geometry with no signs of AI artifacts. The cars maintain their shape and texture, and the scene is coherent. Despite the FFT analysis error, the visual evidence strongly supports the video being real.",
+    "answer": "Real",
+    "time_seconds": 48.87
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000029.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis returned an anisotropy score of 0.042, which is below the 0.048 threshold, indicating the video is likely real. The SAM segmentation analysis isolated four cars, and a detailed inspection of the clips shows no signs of AI artifacts. The car bodies, windows, and reflections are stable and consistent across frames, with no evidence of rigidity violations, texture swimming, or component morphing. The lighting and shadows are coherent with the scene. Based on the low anisotropy score and the absence of visual artifacts, the video is real.",
+    "answer": "Real",
+    "time_seconds": 41.67
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000032.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: m using the FFT anisotropy score to determine authenticity. Therefore, we must rely solely on the visual analysis from the `get_masks` tool.\n\nThe segmentation tool successfully isolated four cars from the video. Upon close inspection of the cropped clips, all objects exhibit physical consistency. The cars maintain their rigid structure throughout the clip; there is no evidence of wobbling, melting, or texture swimming. The wheels and body panels remain stable and do not morph or change shape. The lighting and shadows are consistent with a real-world nighttime scene, and the motion of the cars is smooth and physically plausible.\n\nGiven the absence of any AI-generated artifacts in the visual analysis, the video is consistent with a real recording.\n\nevaluation: The FFT analysis failed, but the visual inspection of segmented cars shows no signs of AI artifacts like wobbling, melting, or morphing. The cars maintain rigid structure and consistent motion, indicating a real video. answer: Real",
+    "answer": "MISSING",
+    "time_seconds": 50.94
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000036.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: t use the FFT anisotropy score to determine if the video is real or generated. However, I can analyze the video for visual artifacts using the SAM segmentation tool.\n\nI have isolated four objects from the video, which appear to be cars. I will now analyze these clips for signs of AI generation, specifically looking for rigidity violations, texture swimming, or component morphing.\n\nAfter reviewing the isolated clips, I observe that the cars maintain their structural integrity throughout the video. The roof, doors, and windows do not wobble or melt. The textures on the car surfaces are stable and do not exhibit \"swimming\" motion. The wheels and other components do not change shape or merge into the car body. There are no obvious AI artifacts in the segmentation masks.\n\nSince the visual analysis shows no evidence of AI-generated artifacts and the FFT analysis failed, I must rely on the visual evidence. The video appears to be a real recording of a car driving on a wet road at night.\n\nReal",
+    "answer": "MISSING",
+    "time_seconds": 37.21
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000026.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output:  cars, including the silver sedan and the white bus, in the scene. Upon close inspection of the clips, the objects maintain their structural integrity. The roof, doors, and windows of the cars do not exhibit any wobbling, melting, or texture swimming. The wheels and mirrors maintain their shape and do not morph into the car body. There are no visible rigidity violations or component morphing in any of the clips.\n\nSince the visual analysis of the segmented objects shows no AI-generated artifacts, and the tool for FFT analysis is failing, I must rely on the visual evidence. The lack of any physical impossibilities in the segmentation results strongly suggests the video is real.\n\nevaluation: The video shows a real-world scene with no visible AI artifacts. The segmentation masks confirm that the cars maintain their structural integrity, with no wobbling, melting, or morphing. Although the FFT analysis tool failed, the visual evidence from the SAM masks indicates a real video.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 86.31
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000035.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: nerated artifacts. The rigid structures of the vehicles, such as the rooflines and windows, remain stable and do not wobble or melt. The textures on the car surfaces are consistent and do not \"swim\" or distort during motion. There are no instances of component morphing, such as wheels changing shape or merging into the body. The overall scene, including the reflections on the wet road and the rain on the windshield, appears physically consistent.\n\nGiven the absence of any rigidity violations, texture swimming, or component morphing in the visual analysis, and the lack of a definitive FFT score, the evidence leans towards the video being real.\n\nevaluation: The video shows a realistic nighttime city scene with rain, and the objects, particularly the cars, exhibit stable and consistent physical properties with no signs of AI-generated artifacts like wobbling or texture swimming. The absence of such artifacts in the SAM analysis supports the conclusion that the video is real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 46.28
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000034.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis failed, but the SAM segmentation revealed clear AI artifacts. The silver car shows significant rigidity violations, with its roof and window frames wobbling and deforming. Additionally, the textures on the car's surface exhibit 'swimming' motion. These physical impossibilities are strong indicators of AI generation.",
+    "answer": "Generated",
+    "time_seconds": 51.08
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000031.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, so the FFT score could not be used. However, the visual analysis of the SAM masks shows no signs of AI artifacts such as wobbling, texture swimming, or morphing in the cars. The objects maintain rigid structures and consistent lighting, which is characteristic of a real video. Therefore, the video is real.",
+    "answer": "Real",
+    "time_seconds": 65.67
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000025.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output:  such as rigidity violations, texture swimming, or component morphing.\nI have analyzed the isolated clips of the cars in the video. In all clips, the objects maintain their structural integrity. There are no signs of rigidity violations, such as wobbling or melting of the car frames. The textures on the car surfaces are stable and do not exhibit \"swimming\" or distortion. The components, including the wheels and windows, do not change shape or merge into the body. The visual evidence from the SAM segmentation shows no AI-generated artifacts. Although the FFT analysis failed, the visual inspection of the objects confirms that the video is consistent with a real-world recording.\n\nevaluation: The FFT analysis tool failed, but the visual inspection using SAM segmentation shows no signs of AI-generated artifacts. The cars maintain their structural integrity, with no wobbling, texture swimming, or component morphing. The visual evidence is consistent with a real-world recording.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 94.45
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000038.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: quency analysis failed, but the visual inspection of the car segments shows no AI artifacts. The cars maintain rigid structure, consistent lighting, and realistic motion, indicating a real video.\n\nanswer: Real\nThe frequency analysis tool returned an error, which prevents a definitive assessment based on FFT. However, the visual analysis of the segmented car clips provides strong evidence. In all clips, the cars exhibit rigid, consistent motion with no signs of AI artifacts such as texture swimming, component morphing, or frame wobbling. The lighting, reflections, and environmental details are coherent and physically plausible. Given the absence of any detectable AI-generated artifacts in the visual analysis, the video is consistent with a real-world recording.\n\nevaluation: The frequency analysis failed, but the visual inspection of the car segments shows no AI artifacts. The cars maintain rigid structure, consistent lighting, and realistic motion, indicating a real video.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 48.25
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000041.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: segmentation showed no AI artifacts like texture swimming or morphing in the cars. The objects maintain physical consistency, suggesting the video is real.\", answer=\"Real\")\nThe `get_frequency_analysis` tool encountered an error, so the FFT analysis cannot be used to determine authenticity. However, the `get_masks` tool successfully isolated several objects, including cars, from the video. Upon reviewing the isolated clips, there are no signs of AI-generated artifacts such as texture swimming, component morphing, or rigidity violations. The cars maintain their structural integrity and the textures remain stable throughout the clips. Given the absence of these artifacts and the natural appearance of the scene, the video is consistent with a real recording.\n\nfinal_answer(evaluation=\"The FFT analysis failed, but the SAM segmentation showed no AI artifacts like texture swimming or morphing in the cars. The objects maintain physical consistency, suggesting the video is real.\", answer=\"Real\")",
+    "answer": "MISSING",
+    "time_seconds": 41.4
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000033.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video shows a large vehicle moving on a road at night. Visual analysis of the segmented object reveals no rigidity violations, texture swimming, or component morphing. The vehicle maintains a consistent and stable structure, which is characteristic of a real-world recording. The absence of AI-generated artifacts in the visual inspection supports the conclusion that the video is real.",
+    "answer": "Real",
+    "time_seconds": 72.5
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000040.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ing the `get_masks` tool results.\n\nThe segmentation masks isolate several cars in the video. Upon close inspection of the clips, the cars exhibit rigid, consistent geometry. The rooflines, windows, and wheel shapes remain stable and do not show any signs of morphing, wobbling, or texture swimming. The lighting and shadows are consistent across the scene and the objects, and there are no unusual distortions or melting effects. The overall scene is coherent and physically plausible.\n\nGiven the absence of any AI-generated artifacts in the visual analysis, and the lack of a definitive FFT score, the evidence points to a real video.\n\nevaluation: The video shows no signs of AI-generated artifacts such as morphing, wobbling, or texture swimming in the cars or other objects. The lighting, shadows, and scene coherence are consistent with a real-world recording. Although the FFT analysis failed, the visual evidence from the segmentation masks strongly supports the video being real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 46.26
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000037.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis failed, but the visual inspection using SAM masks shows no AI artifacts. The cars maintain their structure, textures are stable, and motion is consistent with reality. There are no signs of rigidity violations, texture swimming, or component morphing. The scene is coherent and physically plausible.",
+    "answer": "Real",
+    "time_seconds": 58.0
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000039.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: car surfaces, such as the paint and reflections, are stable and do not exhibit the \"swimming\" or warping effect commonly seen in AI-generated videos.\n*   **Component Morphing:** The wheels, mirrors, and other components maintain their correct shape and do not merge into the car body or change form.\n\nThese visual observations indicate a high degree of physical consistency and realism. Since the FFT analysis is unavailable due to a technical error, I must rely on the visual evidence. The absence of any AI-generated artifacts in the SAM segmentation analysis strongly suggests the video is real.\n\nevaluation: The video is real. The visual analysis of the segmented car clips shows no signs of AI artifacts such as rigidity violations, texture swimming, or component morphing. The vehicles maintain their physical integrity and realistic textures, which is consistent with a real-world recording. Although the FFT analysis failed, the visual evidence from the SAM masks is conclusive.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 63.6
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000045.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: he visual evidence. The video appears to be a real recording of a car driving on a highway at night.\n\nReal\nThe frequency analysis tool returned an error, so I cannot use the FFT anisotropy score to determine if the video is real or generated. However, I can analyze the video for visual artifacts using the SAM segmentation tool.\n\nThe segmentation results show four distinct cars on the road. Upon close inspection of the individual clips, there are no signs of AI-generated artifacts. The cars maintain their rigid structure throughout the video; there is no wobbling, melting, or morphing of the roof, doors, or windows. The textures on the car surfaces are stable and do not exhibit \"swimming\" motion. The lighting and reflections are consistent with a real-world night driving scene.\n\nSince the visual analysis shows no evidence of AI artifacts and the FFT analysis failed, I must rely on the visual evidence. The video appears to be a real recording of a car driving on a highway at night.\n\nReal",
+    "answer": "MISSING",
+    "time_seconds": 35.22
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000043.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: y score to determine if the video is real or generated. However, I can analyze the visual artifacts using the SAM segmentation masks.\n\nI have isolated four objects from the video, which appear to be cars. Upon close inspection of the clips, I observe the following:\n- The car in Clip 1 shows a consistent, rigid structure with no signs of wobbling or morphing.\n- The car in Clip 2 maintains a stable shape and texture.\n- The car in Clip 3 shows no evidence of rigidity violation or texture swimming.\n- The car in Clip 4 also appears physically consistent and stable.\n\nNone of the isolated objects exhibit the AI-generated artifacts such as melting, breathing, or component morphing. The visual evidence from the SAM masks suggests the video is real.\n\nevaluation: The frequency analysis failed, but the SAM segmentation masks show no signs of AI artifacts like rigidity violation or texture swimming in any of the isolated cars. The objects maintain stable, realistic shapes and textures. answer: Real",
+    "answer": "MISSING",
+    "time_seconds": 41.53
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000046.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The video shows no signs of AI-generated artifacts such as wobbling, texture swimming, or component morphing. All objects maintain their physical integrity. The visual evidence strongly supports the video being real.",
+    "answer": "Real",
+    "time_seconds": 38.3
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000047.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ks shows no signs of AI-generated artifacts like texture swimming or morphing. The cars maintain consistent shapes and rigidity, indicating a real video.\n\nanswer: Real\nThe frequency analysis tool returned an error, which prevents a definitive assessment based on FFT. However, the visual analysis of the object masks provides strong evidence. The segmentation of the cars shows no signs of AI-generated artifacts such as texture swimming, component morphing, or rigidity violations. The cars maintain consistent shapes and textures throughout the video, and their interactions with the environment are physically plausible. Given the absence of any detectable AI artifacts in the visual analysis, the video is consistent with a real recording.\n\nevaluation: The frequency analysis tool failed, but the visual inspection of the car masks shows no signs of AI-generated artifacts like texture swimming or morphing. The cars maintain consistent shapes and rigidity, indicating a real video.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 38.39
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000048.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: on close inspection of the clips, I observe that all objects maintain their structural integrity. The roof, doors, and windows of the vehicles do not wobble or melt. The textures on the car surfaces are stable and do not exhibit \"swimming\" artifacts. The wheels and mirrors maintain their shape and do not appear to morph into the body of the car. There are no signs of rigidity violation, texture swimming, or component morphing in any of the clips.\n\nSince the visual analysis shows no AI-generated artifacts and the FFT analysis failed, I must rely on the visual evidence. The objects in the video appear physically consistent and stable.\n\nevaluation: The video shows no signs of AI-generated artifacts such as wobbling, melting, or morphing of rigid objects. The visual analysis of the segmented clips confirms that all vehicles maintain their structural integrity and textures are stable. Although the FFT analysis failed, the visual evidence strongly supports the video being real.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 40.32
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000050.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: ntation shows no AI artifacts. The cars maintain rigid structure and consistent lighting, indicating a real video.\n\nanswer: Real\nThe FFT analysis returned an error, preventing a definitive assessment of the video's authenticity based on frequency patterns. However, the SAM segmentation analysis provides strong evidence. The tool successfully isolated four cars, and in each of the resulting clips, the vehicles exhibit perfect rigidity. The rooflines, windows, and wheel shapes remain stable and do not show any signs of wobbling, melting, or texture swimming—common artifacts in AI-generated videos. The lighting and shadows are consistent across the scene, and the overall motion is coherent. Given the absence of any detectable AI artifacts in the visual analysis, the video is consistent with a real recording.\n\nevaluation: The FFT analysis failed, but the SAM segmentation shows no AI artifacts. The cars maintain rigid structure and consistent lighting, indicating a real video.\n\nanswer: Real",
+    "answer": "MISSING",
+    "time_seconds": 32.93
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000014.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, and the object segmentation tool found no objects in the video. Without detectable objects or motion, there is insufficient evidence to perform a reliable AI forensics analysis. The video appears to be a static or low-content recording, but the lack of data prevents a definitive conclusion on its authenticity.",
+    "answer": "Cannot determine",
+    "time_seconds": 183.02
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000044.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "final_answer not called. Raw output: g.\nThe `get_masks` tool failed to isolate any objects, returning 0 objects. This suggests that the segmentation model could not identify any cars in the video, which is highly unusual for a driving scene. This failure, combined with the earlier failure of the FFT analysis, indicates significant issues with the video's integrity.\n\nGiven that both primary forensic tools failed to process the video, and the lack of detectable objects in a scene that should clearly contain vehicles, the evidence strongly points to the video being AI-generated. The inability to extract meaningful data from the video is itself a major artifact.\n\nevaluation: Both the frequency analysis and object segmentation tools failed to process the video, which is highly atypical for a real-world driving scene. The failure to detect any cars, despite the presence of a highway and other vehicles, suggests the video is not authentic. These systemic failures are strong indicators of an AI-generated video.\n\nanswer: Generated",
+    "answer": "MISSING",
+    "time_seconds": 57.5
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000049.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The FFT analysis failed due to a system error, preventing a primary frequency-based assessment. However, the SAM segmentation tool isolated the car, and a visual inspection of the resulting clip revealed no AI-generated artifacts such as rigidity violations, texture swimming, or component morphing. The car appears physically consistent and stable. Based on the available visual evidence, the video is likely real.",
+    "answer": "Real",
+    "time_seconds": 63.62
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000030.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, but the SAM segmentation analysis showed no AI artifacts. The cars maintain rigid structure, with no wobbling, melting, or texture swimming. All objects appear physically consistent. Therefore, the video is real.",
+    "answer": "Real",
+    "time_seconds": 154.45
+  },
+  {
+    "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000042.mp4",
+    "question": "Is it a real video or generated ?",
+    "evaluation": "The frequency analysis tool failed, but the SAM segmentation analysis of the video shows no AI-generated artifacts. The objects, including the bus and cars, maintain their structural integrity with no signs of wobbling, melting, or texture swimming. All components appear rigid and consistent throughout the clip. Based on the visual evidence, the video is real.",
+    "answer": "Real",
+    "time_seconds": 119.52
+  }
+]

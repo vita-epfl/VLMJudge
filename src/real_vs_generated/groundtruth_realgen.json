@@ -1,0 +1,602 @@
+[
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/wrong_way_driving/WWD_006_Foggy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/wrong_way_driving/WWD_006_Foggy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_016_Snowy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_red_lights/cross_red_016_Snowy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_011_Snowy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/aggressive_takeover/agg_tk_011_Snowy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_059_Night.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_stop/cross_stop_059_Night.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_044_Foggy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_stop/cross_stop_044_Foggy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_032_Sunny.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_stop/cross_stop_032_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_032_Foggy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_red_lights/cross_red_032_Foggy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_012_Golden hour.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_red_lights/cross_red_012_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_035_Golden hour.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/cross_stop_035_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_004_Morning.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_red_lights/cross_red_004_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_058_Morning.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/cross_stop_058_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/agg_tk_035_Golden hour.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/agg_tk_035_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_015_Morning.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/aggressive_takeover/agg_tk_015_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_014_Morning.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/aggressive_takeover/agg_tk_014_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_red_lights/cross_red_007_Rainy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_red_lights/cross_red_007_Rainy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_030_Original.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_stop/cross_stop_030_Original.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_037_Rainy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_stop/cross_stop_037_Rainy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_014_Rainy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/cross_stop_014_Rainy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/df66af93-16e2-4950-9df7-15c5b0fdc187_477212600000_477232600000_Golden hour.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/df66af93-16e2-4950-9df7-15c5b0fdc187_477212600000_477232600000_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/aggressive_takeover/agg_tk_012_Original.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/aggressive_takeover/agg_tk_012_Original.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_043_Morning.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/cross_stop_043_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/crossing_stop/cross_stop_020_Night.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/crossing_stop/cross_stop_020_Night.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/wrong_way_driving/WWD_011_Morning.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/wrong_way_driving/WWD_011_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/cross_stop_035_Foggy.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/cross_stop_035_Foggy.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-drive-dreams/negative/agg_tk_033_Sunny.mp4",
+        "source": "cosmos-drive-dreams",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-drive-dreams/negative/agg_tk_033_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_red_010.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/cross_red_010.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/pedestrians_012_Morning.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/pedestrians_012_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_stop_003_Golden hour.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/cross_stop_003_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/9Y9PlE7b1S8_29616_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/9Y9PlE7b1S8_29616_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_crash_014_Golden hour.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/car_crash_014_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/pedestrians_004_Sunny.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/pedestrians_004_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/giViRewuugA_25104_7b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/giViRewuugA_25104_7b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_crash_012_Sunny.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/car_crash_012_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_red_008_Golden hour.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/cross_red_008_Golden hour.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cyclists_002_Sunny.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/cyclists_002_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_brake_003_Sunny.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/car_brake_003_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/bqiM7F6TDfo_43008_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/bqiM7F6TDfo_43008_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/nOP1blfMCTg_25392_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/nOP1blfMCTg_25392_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_brake_002.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/car_brake_002.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/jKrJezTsVUk_9216_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/jKrJezTsVUk_9216_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/j4qcANjnLxc_13824_7b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/j4qcANjnLxc_13824_7b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_red_024_Night.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/cross_red_024_Night.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/MXxot9M4-iE_41280_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/MXxot9M4-iE_41280_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/pedestrians_014_Sunny.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/pedestrians_014_Sunny.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/scB_bYG27yI_101328_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/scB_bYG27yI_101328_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/car_crash_002.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/car_crash_002.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/lT4AML9VU2Q_79200_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/lT4AML9VU2Q_79200_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/Xy_FYVEFVnk_39840_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/Xy_FYVEFVnk_39840_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/ur8ygTh_wF0_2496_14b.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/ur8ygTh_wF0_2496_14b.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/cosmos-predict1/artifacts/cross_stop_009_Morning.mp4",
+        "source": "cosmos-predict1",
+        "ground_truth": "Generated",
+        "rel_video": "cosmos-predict1/artifacts/cross_stop_009_Morning.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000001.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000001.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000002.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000002.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000003.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000003.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000004.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000004.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000005.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000005.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000006.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000006.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000007.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000007.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000008.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000008.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000009.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000009.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000010.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000010.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000011.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000011.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000012.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000012.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000013.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000013.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000014.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000014.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000015.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000015.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000016.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000016.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000017.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000017.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000018.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000018.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000019.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000019.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000020.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000020.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000021.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000021.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000022.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000022.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000023.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000023.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000024.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000024.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000025.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000025.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000026.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000026.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000027.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000027.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000028.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000028.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000029.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000029.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000030.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000030.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000031.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000031.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000032.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000032.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000033.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000033.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000034.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000034.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000035.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000035.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000036.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000036.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000037.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000037.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000038.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000038.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000039.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000039.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000040.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000040.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000041.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000041.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000042.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000042.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000043.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000043.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000044.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000044.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000045.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000045.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000046.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000046.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000047.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000047.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000048.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000048.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000049.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000049.mp4"
+    },
+    {
+        "video": "/mnt/vita/scratch/vita-students/users/scharffe/VLM-eval/final_dataset/real/000050.mp4",
+        "source": "real",
+        "ground_truth": "Real",
+        "rel_video": "real/000050.mp4"
+    }
+]

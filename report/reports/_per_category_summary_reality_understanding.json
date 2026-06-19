@@ -1,0 +1,1330 @@
+{
+  "per_model": {
+    "Cosmos-Reason": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 540,
+      "accuracy": 0.17023959646910466
+    },
+    "InternVL3.5-30B": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 1003,
+      "accuracy": 0.3162042875157629
+    },
+    "InternVL3.5-8B": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 496,
+      "accuracy": 0.15636822194199243
+    },
+    "Qwen3-VL": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 107,
+      "accuracy": 0.03373266078184111
+    },
+    "Qwen2.5-Omni": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 479,
+      "accuracy": 0.15100882723833545
+    },
+    "LLaVA-OneVision": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 639,
+      "accuracy": 0.20145018915510718
+    },
+    "Qwen3-VL+agent": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 1825,
+      "accuracy": 0.5753467843631778
+    },
+    "Qwen3-VL+agent+hints": {
+      "category": "Reality understanding",
+      "n": 3172,
+      "n_correct": 1358,
+      "accuracy": 0.4281210592686003
+    }
+  },
+  "per_model_per_question": {
+    "Cosmos-Reason": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 134,
+        "accuracy": 0.9305555555555556
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 44,
+        "accuracy": 0.10945273631840796
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 83,
+        "accuracy": 0.2553846153846154
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 106,
+        "accuracy": 0.527363184079602
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 3,
+        "accuracy": 1.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 1,
+        "accuracy": 1.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 303,
+        "accuracy": 0.1897307451471509
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 593,
+        "accuracy": 0.5480591497227357
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 27,
+        "accuracy": 0.17647058823529413
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 126,
+        "accuracy": 0.24609375
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 152,
+        "accuracy": 0.9559748427672956
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 34,
+        "accuracy": 0.2556390977443609
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 237,
+        "accuracy": 0.150571791613723
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 113,
+        "accuracy": 0.1044362292051756
+      }
+    ],
+    "InternVL3.5-30B": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 135,
+        "accuracy": 0.9375
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 23,
+        "accuracy": 0.05721393034825871
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 76,
+        "accuracy": 0.23384615384615384
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 160,
+        "accuracy": 0.7960199004975125
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 116,
+        "accuracy": 0.07263619286161553
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 567,
+        "accuracy": 0.5240295748613678
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 19,
+        "accuracy": 0.12418300653594772
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 29,
+        "accuracy": 0.056640625
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 154,
+        "accuracy": 0.9685534591194969
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 25,
+        "accuracy": 0.18796992481203006
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 887,
+        "accuracy": 0.5635324015247777
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 88,
+        "accuracy": 0.08133086876155268
+      }
+    ],
+    "InternVL3.5-8B": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 127,
+        "accuracy": 0.8819444444444444
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 54,
+        "accuracy": 0.13432835820895522
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 92,
+        "accuracy": 0.28307692307692306
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 181,
+        "accuracy": 0.900497512437811
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 45,
+        "accuracy": 0.028177833437695678
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 626,
+        "accuracy": 0.5785582255083179
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 4,
+        "accuracy": 0.026143790849673203
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 9,
+        "accuracy": 0.017578125
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 148,
+        "accuracy": 0.9308176100628931
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 10,
+        "accuracy": 0.07518796992481203
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 451,
+        "accuracy": 0.28653113087674714
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 140,
+        "accuracy": 0.12939001848428835
+      }
+    ],
+    "Qwen3-VL": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 121,
+        "accuracy": 0.8402777777777778
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 39,
+        "accuracy": 0.09701492537313433
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 72,
+        "accuracy": 0.22153846153846155
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 188,
+        "accuracy": 0.9353233830845771
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 11,
+        "accuracy": 0.0068879148403256105
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 575,
+        "accuracy": 0.5314232902033271
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 36,
+        "accuracy": 0.23529411764705882
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 29,
+        "accuracy": 0.056640625
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 154,
+        "accuracy": 0.9685534591194969
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 5,
+        "accuracy": 0.03759398496240601
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 96,
+        "accuracy": 0.060991105463786534
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 289,
+        "accuracy": 0.26709796672828096
+      }
+    ],
+    "Qwen2.5-Omni": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 132,
+        "accuracy": 0.9166666666666666
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 27,
+        "accuracy": 0.06716417910447761
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 68,
+        "accuracy": 0.20923076923076922
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 188,
+        "accuracy": 0.9353233830845771
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 38,
+        "accuracy": 0.023794614902943018
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 610,
+        "accuracy": 0.5637707948243993
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 10,
+        "accuracy": 0.06535947712418301
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 37,
+        "accuracy": 0.072265625
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 154,
+        "accuracy": 0.9685534591194969
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 3,
+        "accuracy": 0.022556390977443608
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 441,
+        "accuracy": 0.28017789072426935
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 313,
+        "accuracy": 0.28927911275415896
+      }
+    ],
+    "LLaVA-OneVision": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 18,
+        "accuracy": 0.125
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 92,
+        "accuracy": 0.22885572139303484
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 91,
+        "accuracy": 0.28
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 17,
+        "accuracy": 0.0845771144278607
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 2,
+        "accuracy": 0.6666666666666666
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 1,
+        "accuracy": 1.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 1,
+        "accuracy": 1.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 589,
+        "accuracy": 0.544362292051756
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 2,
+        "accuracy": 0.013071895424836602
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 8,
+        "accuracy": 0.015625
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 141,
+        "accuracy": 0.8867924528301887
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 23,
+        "accuracy": 0.17293233082706766
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 639,
+        "accuracy": 0.4059720457433291
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 134,
+        "accuracy": 0.12384473197781885
+      }
+    ],
+    "Qwen3-VL+agent": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 124,
+        "accuracy": 0.8611111111111112
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 256,
+        "accuracy": 0.6368159203980099
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 169,
+        "accuracy": 0.52
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 193,
+        "accuracy": 0.9601990049751243
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 1191,
+        "accuracy": 0.7457733249843457
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 711,
+        "accuracy": 0.6571164510166358
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 128,
+        "accuracy": 0.8366013071895425
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 304,
+        "accuracy": 0.59375
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 150,
+        "accuracy": 0.9433962264150944
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 16,
+        "accuracy": 0.12030075187969924
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 634,
+        "accuracy": 0.4027954256670902
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 551,
+        "accuracy": 0.5092421441774492
+      }
+    ],
+    "Qwen3-VL+agent+hints": [
+      {
+        "question": "Are the traffic lights red ?",
+        "n": 144,
+        "n_correct": 132,
+        "accuracy": 0.9166666666666666
+      },
+      {
+        "question": "Are the traffic signs consistent with ego movement? For example, after turning.",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Do some objects change shape or appearance ?",
+        "n": 402,
+        "n_correct": 248,
+        "accuracy": 0.6169154228855721
+      },
+      {
+        "question": "Does any object appear or disappear without continuous motion ?",
+        "n": 325,
+        "n_correct": 92,
+        "accuracy": 0.28307692307692306
+      },
+      {
+        "question": "Has the ego car stopped ?",
+        "n": 201,
+        "n_correct": 196,
+        "accuracy": 0.9751243781094527
+      },
+      {
+        "question": "Has the ego car stopped after the sign ?",
+        "n": 3,
+        "n_correct": 1,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "question": "Has the ego car stopped after the stop ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Has the ego car stopped after the stop sign ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "Is it a real video or generated ?",
+        "n": 1597,
+        "n_correct": 905,
+        "accuracy": 0.5666875391358798
+      },
+      {
+        "question": "Is it a safe way of driving for the ego car ?",
+        "n": 1082,
+        "n_correct": 598,
+        "accuracy": 0.5526802218114603
+      },
+      {
+        "question": "Is the ego car behavior consistent with visible cues of the traffic lights ?",
+        "n": 153,
+        "n_correct": 130,
+        "accuracy": 0.8496732026143791
+      },
+      {
+        "question": "Is the ego car following the traffic rules ?",
+        "n": 512,
+        "n_correct": 356,
+        "accuracy": 0.6953125
+      },
+      {
+        "question": "Is the ego car on a highway ?",
+        "n": 159,
+        "n_correct": 146,
+        "accuracy": 0.9182389937106918
+      },
+      {
+        "question": "Is the lighting changing ?",
+        "n": 1,
+        "n_correct": 0,
+        "accuracy": 0.0
+      },
+      {
+        "question": "On which side is the ego car overtaking ?",
+        "n": 133,
+        "n_correct": 9,
+        "accuracy": 0.06766917293233082
+      },
+      {
+        "question": "Overall, how realistic is the scene (roads, markings, lighting, objects) ? Give a score that ranges from 1 to 3 with the following scale : 1=clearly impossible, 2=mostly realistic with minor issues, 3=indistinguishable from real",
+        "n": 1574,
+        "n_correct": 453,
+        "accuracy": 0.2878017789072427
+      },
+      {
+        "question": "Overall, how safe is the driving of the ego car ? Give a score that ranges from 1 to 3 with the following scale : 1=really dangerous, 2=mostly safe with minor issues, 3=perfectly safe",
+        "n": 1082,
+        "n_correct": 488,
+        "accuracy": 0.4510166358595194
+      }
+    ]
+  },
+  "per_model_confusion": {
+    "Cosmos-Reason": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 1291
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 718
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 479
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 303
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 237
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 127
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "(3)",
+        "n": 5
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "(3)",
+        "n": 3
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "NO_PARSE",
+        "n": 2
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "::",
+        "n": 1
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Realistic with potential generation artifacts",
+        "n": 1
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "1",
+        "n": 1
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real with a minor visual glitch",
+        "n": 1
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "(2)",
+        "n": 1
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "NO_PARSE",
+        "n": 1
+      }
+    ],
+    "InternVL3.5-30B": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 1481
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 887
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 531
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 116
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 80
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 76
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ],
+    "InternVL3.5-8B": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 1552
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 512
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 451
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 311
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 300
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 45
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ],
+    "Qwen3-VL": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 1586
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 867
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 548
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 96
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 63
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 11
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ],
+    "Qwen2.5-Omni": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 1559
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 522
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 478
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 441
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 133
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 38
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ],
+    "LLaVA-OneVision": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 1597
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 639
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 320
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 306
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 300
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "NO_PARSE",
+        "n": 5
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "NO_PARSE",
+        "n": 4
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ],
+    "Qwen3-VL+agent": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 1191
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 484
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 406
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 290
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "1",
+        "n": 244
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 235
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 171
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "1",
+        "n": 150
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ],
+    "Qwen3-VL+agent+hints": [
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Generated",
+        "n": 905
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "Generated",
+        "vlm_answer": "Real",
+        "n": 692
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "3",
+        "n": 521
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "2",
+        "n": 390
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "3",
+        "n": 284
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "2",
+        "n": 264
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "1",
+        "vlm_answer": "1",
+        "n": 63
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "1",
+        "n": 50
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "2",
+        "vlm_answer": "Generated",
+        "n": 2
+      },
+      {
+        "category": "Reality understanding",
+        "ground_truth": "No",
+        "vlm_answer": "Yes",
+        "n": 1
+      }
+    ]
+  }
+}
