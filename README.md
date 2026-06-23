@@ -2,7 +2,7 @@
 
 # 🚗🔍 DriveJudge
 
-### Can Vision-Language Models tell a *real* dashcam video from an *AI-generated* one?
+### Can Vision-Language Models reliably judge generated driving simulations?
 
 **A benchmarking harness for Vision-Language Models on driving-video QA — built to find out whether VLMs can spot AI-generation artifacts.**
 
@@ -14,15 +14,20 @@
 
 ## 🧠 TL;DR
 
-We built a video Question-Answering benchmark over **real and AI-generated driving clips**
-(the in-house *cosmos-drive-dreams* / *cosmos-predict1* sets, plus *Pbench*) and threw a zoo of
-**open- and closed-source VLMs** at it. Then we asked the hard question:
+Generative driving simulators and visual world models can produce realistic-looking driving videos, but visual realism alone does not guarantee that a rollout is behaviorally correct. A generated video may contain unsafe maneuvers, traffic-rule violations, physically inconsistent motion, or subtle generation artifacts.
 
-> *Do these models actually **see** that a video was generated, or do they just guess "real"?*
+We introduce **DriveJudgeBench**, a benchmark of **1,597 curated synthetic driving clips** and **7,371 manually annotated video--question pairs** across six categories:
 
-Spoiler: **off-the-shelf VLMs are nearly blind to generation artifacts** — but a **tool-using
-agent** built around Qwen3-VL (optical flow + segmentation + FFT spectral analysis) closes most
-of the gap. 📈
+- reality detection
+- artifact recognition
+- safety assessment
+- traffic-law compliance
+- spatio-temporal reasoning
+- visual understanding
+
+Across a broad set of open- and closed-source VLMs, we find that off-the-shelf models are often unreliable judges of generated driving videos. They can recognize static scene cues such as traffic lights and road layout, but often fail to verify temporal behavior, detect artifacts, or identify traffic-rule violations.
+
+To address this, we propose **DriveJudge**, a training-free tool-augmented VLM judge built on Qwen3-VL. DriveJudge grounds model decisions using optical flow, segmentation-based crop-and-zoom, and FFT-based frequency analysis, substantially improving reliability on safety-relevant and synthetic-content evaluation tasks.
 
 <div align="center">
 
@@ -42,40 +47,6 @@ of the gap. 📈
 *Overall accuracy on the full driving-QA benchmark. Closed-source models evaluated: **GPT-5.4-mini**
 and **Gemini-3-Flash**. See [`analysis_notebooks/`](analysis_notebooks/) for the breakdowns.*
 
-</div>
-
----
-
-## 🎯 The headline result: the "always say real" trap
-
-In a controlled **real-vs-generated ablation** (100 clips: 50 real 🟢 / 50 generated 🔴), base VLMs
-score near-perfectly on *real* videos and **catastrophically on *generated* ones** — because they
-default to answering "real" almost every time:
-
-| Model | 🟢 Real acc. | 🔴 Generated acc. |
-|:---|:---:|:---:|
-| Qwen3-VL-30B | 100 % | **0 %** |
-| LLaVA-OneVision | 100 % | **0 %** |
-| InternVL3.5-8B | 98 % | **0 %** |
-| Qwen2.5-Omni | 98 % | **4 %** |
-| InternVL3.5-30B | 96 % | **6 %** |
-| Cosmos-Reason | 96 % | **22 %** |
-| 🤖 **Qwen3-VL + agent** | 88 % | **70 %** |
-| 🤖 **Qwen3-VL + agent + hints** | 96 % | **64 %** |
-
-➡️ Giving the model **tools** — letting it *look* at frequency spectra, optical flow and
-segmentation masks — is what finally makes generated artifacts visible. Reproduce it from
-[`src/real_vs_generated/`](src/real_vs_generated/).
-
-<div align="center">
-<table>
-<tr>
-<td align="center"><b>🟢 Real frame — FFT spectrum</b><br><img src="report/figures/fft_real.jpg" width="320"></td>
-<td align="center"><b>🔴 Generated frame — FFT spectrum</b><br><img src="report/figures/fft_generated.jpg" width="320"></td>
-</tr>
-</table>
-
-*The tell-tale spectral fingerprints of generation — the kind of cue a raw VLM never gets to see.*
 </div>
 
 ---
