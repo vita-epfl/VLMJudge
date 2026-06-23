@@ -4,7 +4,7 @@
 
 ### Can Vision-Language Models reliably judge generated driving simulations?
 
-**A benchmarking harness for Vision-Language Models on driving-video QA — built to find out whether VLMs can spot AI-generation artifacts.**
+**A benchmark and tool-augmented evaluation framework for testing whether VLMs can judge safety, rule compliance, realism, artifacts, and temporal behavior in generated driving videos.**
 
 [🤗 Dataset](https://huggingface.co/datasets/SeagullofLeman/DriveJudgeBench)
 
@@ -34,8 +34,8 @@ To address this, we propose **DriveJudge**, a training-free tool-augmented VLM j
 | 🏆 Model | Accuracy |
 |:---|:---:|
 | 🔒 **Gemini-3-Flash** | **64.0 %** |
-| 🤖 **Qwen3-VL + tools** | 60.1 % |
-| 🤖 **Qwen3-VL + tools + hints** | 50.9 % |
+| 🤖 **DriveJudge** | **60.1%** |
+| 🤖 **DriveJudge + CoT** | 50.9 % |
 | 🔒 GPT-5.4-mini | 39.1 % |
 | InternVL3.5-30B | 30.8 % |
 | Cosmos-Reason-7B | 25.7 % |
@@ -109,10 +109,11 @@ Answer: <the actual answer>
 
 ---
 
-## 🤖 The agent
+## 🤖 DriveJudge: the tool-augmented VLM judge
 
-`src/agentic/main_multi_tools_v4.py` is the agent that produced the best results
-(**Qwen3-VL + tools**, with and without hints). It speaks the OpenAI-compatible API of a **local
+`src/agentic/main_multi_tools_v4.py` implements **DriveJudge**, the training-free tool-augmented judge reported in the paper.
+It uses Qwen3-VL as the backbone and augments it with optical flow, segmentation, and FFT frequency analysis. 
+It uses the OpenAI-compatible API of a **local
 vLLM server that must already be running on port 8000** — serve the model, then run the agent:
 
 ```bash
