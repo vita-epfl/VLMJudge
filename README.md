@@ -178,24 +178,6 @@ failure dumps live in [`report/`](report/). Run the notebooks **from `analysis_n
 their relative paths (`../dataset/…`, `../report/figures/…`) resolve.
 
 <div align="center">
-<img src="report/figures/scatter_accuracy_time.png" width="520">
-<br><i>Accuracy vs. inference time — the agent buys a lot of accuracy for ~14 s/clip.</i>
-</div>
-
----
-
-## 🗂️ Data, secrets & git hygiene
-
-- **Datasets & model weights** live on a cluster filesystem (the path is hardcoded in the eval
-  scripts). Locally they sit in `dataset/` — **gitignored**, never committed.
-- **Heavy closed-source artifacts** (base64 request batches, raw results, frame caches) and bulky
-  regenerable analysis blobs are gitignored too; only the *code* and small summaries are tracked.
-- **Secrets** — `secrets.env`, `robot_secret.json`, and every `.env` are gitignored. Use the
-  `example.env` templates.
-
----
-
-<div align="center">
 
 *VITA lab.*
 
